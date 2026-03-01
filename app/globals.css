@@ -19,6 +19,7 @@
   --font-sans: "Switzer", system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-geist-mono), monospace;
   --font-serif: var(--font-serif), "Georgia", serif;
+  --animate-marquee: marquee 90s linear infinite;
 }
 
 html {
@@ -85,4 +86,9 @@ h3 {
 
 .animate-fade-in {
   animation: fadeIn 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }

@@ -100,7 +100,7 @@ export default function CustomCursor() {
           ? "rgba(17, 17, 17, 0.9)"
           : isLink
             ? "rgba(17, 17, 17, 0.15)"
-            : "rgba(17, 17, 17, 0.9)",
+            : "#eab308",
       }}
       transition={{
         width: { type: "spring", stiffness: 300, damping: 25 },
