@@ -1,31 +1,91 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import Link from "next/link";
-import ImagePlaceholder from "./ImagePlaceholder";
+import Image from "next/image";
+import { gsap } from "@/lib/gsap";
 import type { Project } from "@/data/projects";
 
-export default function ProjectCard({ project }: { project: Project }) {
+export default function ProjectCard({
+  project,
+  index = 0,
+}: {
+  project: Project;
+  index?: number;
+}) {
+  const cardRef = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    if (!cardRef.current) return;
+
+    const anim = gsap.from(cardRef.current, {
+      opacity: 0,
+      y: 60,
+      duration: 0.8,
+      ease: "power2.out",
+      delay: index % 2 === 0 ? 0 : 0.1,
+      scrollTrigger: {
+        trigger: cardRef.current,
+        start: "top 85%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    return () => {
+      anim.scrollTrigger?.kill();
+      anim.kill();
+    };
+  }, [index]);
+
   return (
     <Link
+      ref={cardRef}
       href={`/work/${project.slug}`}
       className="group block"
-      data-cursor="case-study"
     >
-      <div className="relative overflow-hidden">
-        <ImagePlaceholder
-          aspectRatio="3/2"
-          label={project.client}
-          gradient={project.gradient}
+      <div className="relative aspect-4/3 overflow-hidden rounded-xl">
+        <Image
           src={project.thumbnail}
           alt={project.client}
+          fill
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          quality={90}
         />
-        <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/10" />
+        <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/5" />
       </div>
-      <div className="mt-3 flex items-baseline justify-between gap-4">
-        <h3 className="text-sm font-medium transition-colors group-hover:text-foreground">
-          {project.title}
-        </h3>
-        <span className="shrink-0 text-xs tracking-wide text-foreground-secondary uppercase">
-          {project.client} &middot; {project.scope[0]} {project.year}
-        </span>
+
+      <div className="mt-4 flex items-start justify-between gap-4">
+        <div>
+          <h3 className="font-sans text-base font-medium tracking-tight">
+            {project.client}
+          </h3>
+          <p className="mt-1 text-sm text-foreground-secondary">
+            {project.title}
+          </p>
+        </div>
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          className="mt-1 shrink-0 text-foreground-secondary transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground"
+        >
+          <path d="M7 17L17 7M17 7H7M17 7v10" />
+        </svg>
+      </div>
+
+      <div className="mt-3 flex flex-wrap gap-1.5">
+        {project.scope.map((tag) => (
+          <span
+            key={tag}
+            className="rounded-full border border-border px-2.5 py-0.5 font-mono text-[10px] tracking-wider text-foreground-secondary uppercase"
+          >
+            {tag}
+          </span>
+        ))}
       </div>
     </Link>
   );

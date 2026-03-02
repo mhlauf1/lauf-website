@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import PageTransition from "@/components/PageTransition";
-import CustomCursor from "@/components/CustomCursor";
 
 const switzer = localFont({
   src: "../public/fonts/Switzer-Variable.woff2",
   variable: "--font-switzer",
   weight: "100 900",
+  display: "swap",
+});
+
+const geistSans = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
   display: "swap",
 });
 
@@ -71,13 +75,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${switzer.variable} ${tiempos.variable} ${geistMono.variable} font-sans antialiased`}>
-        <CustomCursor />
+      <body
+        className={`${switzer.variable} ${geistSans.variable} ${tiempos.variable} ${geistMono.variable} font-sans antialiased`}
+      >
+        <main className="min-h-screen">{children}</main>
+        <Footer />
         <Nav />
-        <PageTransition>
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-        </PageTransition>
       </body>
     </html>
   );
