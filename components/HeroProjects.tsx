@@ -51,7 +51,8 @@ export default function HeroProjects() {
     if (!ready || !trackRef.current || !marqueeRef.current) return;
 
     // Measure one set of cards (first half of duplicated list)
-    const cards = trackRef.current.querySelectorAll<HTMLElement>(".marquee-card");
+    const cards =
+      trackRef.current.querySelectorAll<HTMLElement>(".marquee-card");
     const oneSetCount = projects.length;
     let oneSetWidth = 0;
     for (let i = 0; i < oneSetCount; i++) {
@@ -124,13 +125,9 @@ export default function HeroProjects() {
       {/* Mobile — infinite horizontal marquee */}
       <div
         ref={marqueeRef}
-        className="absolute inset-x-0 bottom-16 overflow-hidden opacity-0 lg:hidden"
+        className="absolute inset-x-0 bottom-4 md:bottom-16 overflow-hidden opacity-0 lg:hidden"
       >
-        <div
-          ref={trackRef}
-          className="flex w-max"
-          style={{ gap: GAP }}
-        >
+        <div ref={trackRef} className="flex w-max" style={{ gap: GAP }}>
           {marqueeItems.map((project, i) => (
             <TransitionLink
               key={`${project.slug}-${i}`}

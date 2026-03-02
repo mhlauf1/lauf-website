@@ -39,11 +39,31 @@ export default function Hero() {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
     tl.fromTo(badge, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 })
-      .fromTo(headline, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3")
-      .fromTo(subtitle, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5 }, "-=0.45")
-      .fromTo(cta, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 }, "-=0.35")
+      .fromTo(
+        headline,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 0.6 },
+        "-=0.3",
+      )
+      .fromTo(
+        subtitle,
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.5 },
+        "-=0.45",
+      )
+      .fromTo(
+        cta,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.4 },
+        "-=0.35",
+      )
       .fromTo(labels, { opacity: 0 }, { opacity: 1, duration: 0.4 }, "-=0.3")
-      .fromTo(arrow, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4 }, "-=0.25");
+      .fromTo(
+        arrow,
+        { opacity: 0, y: 10 },
+        { opacity: 1, y: 0, duration: 0.4 },
+        "-=0.25",
+      );
   }, [ready]);
 
   // Start interval after entrance animation
@@ -167,7 +187,7 @@ export default function Hero() {
           </TransitionLink>
         </div>
 
-        <div className="hero-labels mt-16 flex flex-wrap gap-3">
+        <div className="hero-labels hidden mt-16 md:flex flex-wrap gap-3">
           {serviceLabels.map((label) => (
             <span
               key={label}
@@ -185,7 +205,9 @@ export default function Hero() {
           href="#work"
           onClick={(e) => {
             e.preventDefault();
-            document.querySelector("#work")?.scrollIntoView({ behavior: "smooth" });
+            document
+              .querySelector("#work")
+              ?.scrollIntoView({ behavior: "smooth" });
           }}
           className="group flex h-10 w-10 items-center justify-center rounded-full border border-foreground/15 transition-colors hover:bg-foreground hover:text-background"
         >
