@@ -4,6 +4,7 @@ import { projects, getProjectBySlug, getAdjacentProjects } from "@/data/projects
 import ScrollProgress from "@/components/ScrollProgress";
 import CaseStudyHeader from "@/components/CaseStudyHeader";
 import CaseStudyContent from "@/components/CaseStudyContent";
+import CaseStudyAnimator from "@/components/CaseStudyAnimator";
 import ProjectNav from "@/components/ProjectNav";
 import CTA from "@/components/CTA";
 
@@ -44,10 +45,12 @@ export default async function CaseStudyPage({
   return (
     <>
       <ScrollProgress />
-      <CaseStudyHeader project={project} />
-      <CaseStudyContent project={project} />
-      <CTA />
-      <ProjectNav prev={prev} next={next} />
+      <CaseStudyAnimator>
+        <CaseStudyHeader project={project} />
+        <CaseStudyContent project={project} />
+        <CTA />
+        <ProjectNav prev={prev} next={next} />
+      </CaseStudyAnimator>
     </>
   );
 }

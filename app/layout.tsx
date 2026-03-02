@@ -4,6 +4,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import TopBar from "@/components/TopBar";
+import PageTransitionProvider from "@/components/PageTransitionProvider";
 
 const switzer = localFont({
   src: "../public/fonts/Switzer-Variable.woff2",
@@ -78,9 +80,12 @@ export default function RootLayout({
       <body
         className={`${switzer.variable} ${geistSans.variable} ${tiempos.variable} ${geistMono.variable} font-sans antialiased`}
       >
-        <main className="min-h-screen">{children}</main>
-        <Footer />
-        <Nav />
+        <PageTransitionProvider>
+          <TopBar />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+          <Nav />
+        </PageTransitionProvider>
       </body>
     </html>
   );

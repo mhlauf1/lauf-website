@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Link from "next/link";
+import TransitionLink from "./TransitionLink";
 import Image from "next/image";
 import { gsap } from "@/lib/gsap";
 import type { Project } from "@/data/projects";
@@ -17,15 +17,16 @@ export default function ProjectCard({
 
   useEffect(() => {
     if (!cardRef.current) return;
+    const el = cardRef.current;
 
-    const anim = gsap.from(cardRef.current, {
-      opacity: 0,
-      y: 60,
+    const anim = gsap.to(el, {
+      opacity: 1,
+      y: 0,
       duration: 0.8,
       ease: "power2.out",
       delay: index % 2 === 0 ? 0 : 0.1,
       scrollTrigger: {
-        trigger: cardRef.current,
+        trigger: el,
         start: "top 85%",
         toggleActions: "play none none none",
       },
@@ -38,10 +39,11 @@ export default function ProjectCard({
   }, [index]);
 
   return (
-    <Link
+    <TransitionLink
       ref={cardRef}
       href={`/work/${project.slug}`}
       className="group block"
+      style={{ opacity: 0, transform: "translateY(60px)" }}
     >
       <div className="relative aspect-4/3 overflow-hidden rounded-xl">
         <Image
@@ -87,6 +89,6 @@ export default function ProjectCard({
           </span>
         ))}
       </div>
-    </Link>
+    </TransitionLink>
   );
 }

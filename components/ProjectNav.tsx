@@ -1,4 +1,6 @@
-import Link from "next/link";
+"use client";
+
+import TransitionLink from "./TransitionLink";
 import type { Project } from "@/data/projects";
 
 interface ProjectNavProps {
@@ -11,7 +13,7 @@ export default function ProjectNav({ prev, next }: ProjectNavProps) {
     <nav className="border-t border-border">
       <div className="grid grid-cols-2 px-6 sm:px-12">
         {prev ? (
-          <Link
+          <TransitionLink
             href={`/work/${prev.slug}`}
             className="group py-12 pr-4 transition-transform hover:-translate-x-1"
           >
@@ -19,12 +21,12 @@ export default function ProjectNav({ prev, next }: ProjectNavProps) {
             <p className="mt-1 font-medium transition-colors group-hover:text-accent">
               {prev.client}
             </p>
-          </Link>
+          </TransitionLink>
         ) : (
           <div />
         )}
         {next ? (
-          <Link
+          <TransitionLink
             href={`/work/${next.slug}`}
             className="group border-l border-border py-12 pl-4 text-right transition-transform hover:translate-x-1"
           >
@@ -32,7 +34,7 @@ export default function ProjectNav({ prev, next }: ProjectNavProps) {
             <p className="mt-1 font-medium transition-colors group-hover:text-accent">
               {next.client}
             </p>
-          </Link>
+          </TransitionLink>
         ) : (
           <div />
         )}

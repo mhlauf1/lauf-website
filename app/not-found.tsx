@@ -1,4 +1,6 @@
-import Link from "next/link";
+"use client";
+
+import TransitionLink from "@/components/TransitionLink";
 
 export default function NotFound() {
   return (
@@ -12,12 +14,12 @@ export default function NotFound() {
           The page you&apos;re looking for doesn&apos;t exist or has been
           moved.
         </p>
-        <Link
+        <TransitionLink
           href="/"
           className="link-underline mt-8 inline-block font-medium"
         >
           Back to home
-        </Link>
+        </TransitionLink>
       </div>
     </section>
   );

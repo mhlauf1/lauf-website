@@ -88,3 +88,26 @@ h3 {
 .scramble-text {
   display: inline-block;
 }
+
+/* ---- Entrance-animated elements start hidden via CSS (prevents flash) ---- */
+.hero-badge,
+.hero-headline,
+.hero-subtitle,
+.hero-cta,
+.hero-labels,
+.hero-arrow {
+  opacity: 0;
+}
+
+.page-heading { opacity: 0; transform: translateY(40px); }
+.page-subheading { opacity: 0; transform: translateY(20px); }
+.page-content { opacity: 0; transform: translateY(20px); }
+.page-section { opacity: 0; transform: translateY(40px); }
+
+.cs-tags { opacity: 0; transform: translateX(-40px); }
+.cs-title { opacity: 0; transform: translateY(60px); }
+.cs-meta { opacity: 0; transform: translateY(20px); }
+.cs-visit { opacity: 0; transform: translateY(10px); }
+.cs-hero-image { clip-path: inset(100% 0% 0% 0%); }
+.cs-section { opacity: 0; transform: translateY(50px); }
+.cs-grid-image { opacity: 0; transform: translateY(40px); }

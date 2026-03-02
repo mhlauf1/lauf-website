@@ -1,32 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { gsap } from "@/lib/gsap";
+import { useTransitionReady } from "./PageTransitionProvider";
+import TransitionLink from "./TransitionLink";
 import HeroProjects from "./HeroProjects";
 import CursorLabels from "./CursorLabels";
-
-function useMadisonTime() {
-  const [time, setTime] = useState("");
-
-  useEffect(() => {
-    const update = () => {
-      const now = new Date();
-      const formatted = now.toLocaleTimeString("en-US", {
-        timeZone: "America/Chicago",
-        hour: "numeric",
-        minute: "2-digit",
-      });
-      setTime(formatted);
-    };
-
-    update();
-    const id = setInterval(update, 10_000);
-    return () => clearInterval(id);
-  }, []);
-
-  return time;
-}
 
 const serviceLabels = ["Design", "Development", "Systems", "Strategy"];
 
@@ -35,34 +14,42 @@ const rotatingPhrases = ["stand out.", "ship faster.", "scale."];
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const madisonTime = useMadisonTime();
   const phraseRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const isAnimating = useRef(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const hasAnimated = useRef(false);
+  const ready = useTransitionReady();
 
-  // Entrance animation
+  // Entrance animation — waits for page transition to finish
   useEffect(() => {
+    if (!ready) return;
+    if (hasAnimated.current) return;
     if (!sectionRef.current) return;
 
-    const topbar = sectionRef.current.querySelector(".hero-topbar");
+    hasAnimated.current = true;
+
     const badge = sectionRef.current.querySelector(".hero-badge");
     const headline = sectionRef.current.querySelector(".hero-headline");
     const subtitle = sectionRef.current.querySelector(".hero-subtitle");
     const cta = sectionRef.current.querySelector(".hero-cta");
     const labels = sectionRef.current.querySelector(".hero-labels");
+    const arrow = sectionRef.current.querySelector(".hero-arrow");
 
+    // Elements start hidden via CSS (opacity: 0) — animate TO visible
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-    tl.from(topbar, { opacity: 0, y: -10, duration: 0.6 })
-      .from(badge, { opacity: 0, y: 20, duration: 0.6 }, "-=0.3")
-      .from(headline, { opacity: 0, y: 50, duration: 1 }, "-=0.3")
-      .from(subtitle, { opacity: 0, y: 30, duration: 0.8 }, "-=0.5")
-      .from(cta, { opacity: 0, y: 20, duration: 0.6 }, "-=0.4")
-      .from(labels, { opacity: 0, duration: 0.6 }, "-=0.3");
-  }, []);
+    tl.fromTo(badge, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 })
+      .fromTo(headline, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3")
+      .fromTo(subtitle, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5 }, "-=0.45")
+      .fromTo(cta, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 }, "-=0.35")
+      .fromTo(labels, { opacity: 0 }, { opacity: 1, duration: 0.4 }, "-=0.3")
+      .fromTo(arrow, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4 }, "-=0.25");
+  }, [ready]);
 
   // Start interval after entrance animation
   useEffect(() => {
+    if (!ready) return;
+
     const delay = setTimeout(() => {
       intervalRef.current = setInterval(() => {
         setActiveIndex((prev) => {
@@ -76,7 +63,7 @@ export default function Hero() {
       clearTimeout(delay);
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, []);
+  }, [ready]);
 
   // Run GSAP animation when activeIndex changes (skip initial mount)
   const prevIndex = useRef(0);
@@ -116,21 +103,6 @@ export default function Hero() {
       ref={sectionRef}
       className="relative min-h-screen overflow-hidden pb-24 pt-[18vh]"
     >
-      {/* Top bar: logo + location */}
-      <div className="hero-topbar absolute top-6 left-6 right-6 z-20 flex items-center justify-between sm:left-12 sm:right-12">
-        <Image
-          src="/images/projects/L-logo.png"
-          alt="Lauf"
-          width={38}
-          height={38}
-          className="rounded-sm"
-          unoptimized
-        />
-        <span className="font-mono text-[11px] tracking-wider text-foreground-secondary uppercase">
-          Madison WI — {madisonTime}
-        </span>
-      </div>
-
       <div className="relative z-10 px-6 sm:px-12">
         <div className="hero-badge mb-6">
           <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 px-4 py-1.5 font-mono text-[10px] tracking-wider text-accent uppercase">
@@ -187,18 +159,12 @@ export default function Hero() {
             </svg>
             Get in touch
           </a>
-          <a
-            href="#work"
-            onClick={(e) => {
-              e.preventDefault();
-              document
-                .querySelector("#work")
-                ?.scrollIntoView({ behavior: "smooth" });
-            }}
+          <TransitionLink
+            href="/work"
             className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 font-mono text-[11px] tracking-wider uppercase transition-colors hover:bg-foreground hover:text-background"
           >
             View Work
-          </a>
+          </TransitionLink>
         </div>
 
         <div className="hero-labels mt-16 flex flex-wrap gap-3">
@@ -211,6 +177,32 @@ export default function Hero() {
             </span>
           ))}
         </div>
+      </div>
+
+      {/* Scroll arrow — bottom left */}
+      <div className="hero-arrow absolute bottom-8 left-6 z-20 hidden sm:left-12 sm:block">
+        <a
+          href="#work"
+          onClick={(e) => {
+            e.preventDefault();
+            document.querySelector("#work")?.scrollIntoView({ behavior: "smooth" });
+          }}
+          className="group flex h-10 w-10 items-center justify-center rounded-full border border-foreground/15 transition-colors hover:bg-foreground hover:text-background"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="transition-transform group-hover:translate-y-0.5"
+          >
+            <path d="M8 2v12M3 9l5 5 5-5" />
+          </svg>
+        </a>
       </div>
 
       <HeroProjects />

@@ -4,7 +4,7 @@ export default function CaseStudyHeader({ project }: { project: Project }) {
   return (
     <header className="pb-16 pt-32 sm:pb-24 sm:pt-44">
       <div className="px-6 sm:px-12">
-        <div className="flex flex-wrap gap-2">
+        <div className="cs-tags flex flex-wrap gap-2">
           {project.scope.map((tag) => (
             <span
               key={tag}
@@ -15,11 +15,11 @@ export default function CaseStudyHeader({ project }: { project: Project }) {
           ))}
         </div>
 
-        <h1 className="mt-6 text-3xl font-medium leading-[1.15] tracking-tight sm:text-4xl lg:text-5xl">
+        <h1 className="cs-title mt-6 text-3xl font-medium leading-[1.15] tracking-tight sm:text-4xl lg:text-5xl">
           {project.title}
         </h1>
 
-        <div className="mt-8 flex flex-wrap gap-x-8 gap-y-2 text-sm text-foreground-secondary">
+        <div className="cs-meta mt-8 flex flex-wrap gap-x-8 gap-y-2 text-sm text-foreground-secondary">
           <span>Client: {project.client}</span>
           <span>Year: {project.year}</span>
         </div>
@@ -29,7 +29,7 @@ export default function CaseStudyHeader({ project }: { project: Project }) {
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 inline-flex items-center gap-1.5 text-sm text-foreground-secondary transition-colors hover:text-foreground"
+            className="cs-visit mt-4 inline-flex items-center gap-1.5 text-sm text-foreground-secondary transition-colors hover:text-foreground"
           >
             Visit Site <span aria-hidden="true">&rarr;</span>
           </a>

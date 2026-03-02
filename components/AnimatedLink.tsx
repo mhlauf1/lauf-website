@@ -1,4 +1,6 @@
-import Link from "next/link";
+"use client";
+
+import TransitionLink from "./TransitionLink";
 import { cn } from "@/lib/utils";
 
 interface AnimatedLinkProps {
@@ -28,8 +30,8 @@ export default function AnimatedLink({
   }
 
   return (
-    <Link href={href} className={cn("link-underline", className)}>
+    <TransitionLink href={href} className={cn("link-underline", className)}>
       {children}
-    </Link>
+    </TransitionLink>
   );
 }

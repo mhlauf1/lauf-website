@@ -1,6 +1,6 @@
 export default function CTA() {
   return (
-    <section className="py-24 sm:py-32">
+    <section className="cs-section page-section py-24 sm:py-32">
       <div className="px-6 sm:px-12">
         <h2 className="max-w-2xl text-3xl tracking-tight sm:text-4xl">
           Have a project in mind?

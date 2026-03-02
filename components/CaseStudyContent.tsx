@@ -9,7 +9,7 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <div className="grid grid-cols-1 gap-4 py-12 sm:grid-cols-[200px_1fr] sm:gap-12">
+    <div className="cs-section grid grid-cols-1 gap-4 py-12 sm:grid-cols-[200px_1fr] sm:gap-12">
       <h2 className="text-sm font-medium text-foreground-secondary">
         {label}
       </h2>
@@ -21,15 +21,17 @@ function Section({
 export default function CaseStudyContent({ project }: { project: Project }) {
   return (
     <div className="px-6 sm:px-12">
-      <ImagePlaceholder
-        aspectRatio="16/9"
-        label={`${project.client} — Hero`}
-        className="w-full"
-        gradient={project.gradient}
-        src={project.heroImage}
-        alt={project.client}
-        sizes="100vw"
-      />
+      <div className="cs-hero-image">
+        <ImagePlaceholder
+          aspectRatio="16/9"
+          label={`${project.client} — Hero`}
+          className="w-full"
+          gradient={project.gradient}
+          src={project.heroImage}
+          alt={project.client}
+          sizes="100vw"
+        />
+      </div>
 
       <div className="mt-16 divide-y divide-border sm:mt-24">
         {project.overview && (
@@ -57,14 +59,15 @@ export default function CaseStudyContent({ project }: { project: Project }) {
         )}
 
         {project.images.length > 0 && (
-          <div className="grid grid-cols-1 gap-4 py-12 sm:grid-cols-2">
+          <div className="cs-section grid grid-cols-1 gap-4 py-12 sm:grid-cols-2">
             {project.images.map((img, i) => (
-              <ImagePlaceholder
-                key={i}
-                aspectRatio="4/3"
-                label={`${project.client} — ${i + 1}`}
-                gradient={project.gradient}
-              />
+              <div key={i} className="cs-grid-image">
+                <ImagePlaceholder
+                  aspectRatio="4/3"
+                  label={`${project.client} — ${i + 1}`}
+                  gradient={project.gradient}
+                />
+              </div>
             ))}
           </div>
         )}

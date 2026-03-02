@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/gsap";
+import { useTransitionReady } from "./PageTransitionProvider";
 
 const cursors = [
   {
@@ -44,20 +45,29 @@ function CursorArrow({ active }: { active: boolean }) {
 
 export default function CursorLabels({ activeIndex }: { activeIndex: number }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const hasAnimated = useRef(false);
+  const ready = useTransitionReady();
 
   useEffect(() => {
+    if (!ready) return;
+    if (hasAnimated.current) return;
     if (!containerRef.current) return;
+
+    hasAnimated.current = true;
     const items = containerRef.current.querySelectorAll(".cursor-label");
 
-    gsap.from(items, {
-      opacity: 0,
-      y: 20,
-      duration: 0.6,
-      stagger: 0.15,
+    const anim = gsap.to(items, {
+      opacity: 1,
+      y: 0,
+      duration: 0.5,
+      stagger: 0.08,
       ease: "power2.out",
-      delay: 1.4,
     });
-  }, []);
+
+    return () => {
+      anim.kill();
+    };
+  }, [ready]);
 
   return (
     <div
@@ -70,7 +80,7 @@ export default function CursorLabels({ activeIndex }: { activeIndex: number }) {
           <div
             key={cursor.text}
             className="cursor-label absolute flex flex-col items-start"
-            style={{ top: cursor.top, left: cursor.left }}
+            style={{ top: cursor.top, left: cursor.left, opacity: 0, transform: "translateY(20px)" }}
           >
             <CursorArrow active={active} />
             <span

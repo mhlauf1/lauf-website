@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import CTA from "@/components/CTA";
+import PageAnimator from "@/components/PageAnimator";
 
 export const metadata: Metadata = {
   title: "About",
@@ -10,13 +11,13 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <>
+    <PageAnimator>
       <section className="pb-16 pt-32 sm:pb-24 sm:pt-44">
         <div className="px-6 sm:px-12">
-          <h1 className="max-w-3xl text-3xl font-medium leading-[1.2] tracking-tight sm:text-4xl lg:text-5xl">
+          <h1 className="page-heading max-w-3xl text-3xl font-medium leading-[1.2] tracking-tight sm:text-4xl lg:text-5xl">
             We believe great design is invisible — it just works.
           </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-foreground-secondary">
+          <p className="page-subheading mt-8 max-w-2xl text-lg leading-relaxed text-foreground-secondary">
             Lauf Studio is a small, intentional practice. We partner with
             companies who care about the details — the ones who know that how
             something feels is just as important as what it does.
@@ -24,7 +25,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24">
+      <section className="page-content py-16 sm:py-24">
         <div className="px-6 sm:px-12">
           <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
             <div>
@@ -68,7 +69,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24">
+      <section className="page-section py-16 sm:py-24">
         <div className="px-6 sm:px-12">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-[200px_1fr] sm:gap-12">
             <h2 className="text-sm font-medium text-foreground-secondary">
@@ -93,6 +94,6 @@ export default function AboutPage() {
       </section>
 
       <CTA />
-    </>
+    </PageAnimator>
   );
 }
