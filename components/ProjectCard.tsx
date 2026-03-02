@@ -27,7 +27,7 @@ export default function ProjectCard({
       delay: index % 2 === 0 ? 0 : 0.1,
       scrollTrigger: {
         trigger: el,
-        start: "top 85%",
+        start: window.innerWidth < 768 ? "top 98%" : "top 85%",
         toggleActions: "play none none none",
       },
     });

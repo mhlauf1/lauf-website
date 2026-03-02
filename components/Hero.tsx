@@ -9,7 +9,7 @@ import CursorLabels from "./CursorLabels";
 
 const serviceLabels = ["Design", "Development", "Systems", "Strategy"];
 
-const rotatingPhrases = ["stand out.", "ship faster.", "scale."];
+const rotatingPhrases = ["stand out.", "ship faster.", "scale online."];
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -135,7 +135,7 @@ export default function Hero() {
           Design, code, and systems that{" "}
           <span className="relative inline-block overflow-hidden align-bottom">
             {/* Invisible sizer — sets width to widest phrase */}
-            <em className="invisible italic">ship faster.</em>
+            <em className="invisible italic">scale online.</em>
             {rotatingPhrases.map((phrase, i) => (
               <em
                 key={phrase}
@@ -154,12 +154,12 @@ export default function Hero() {
           </span>
         </h1>
 
-        <p className="hero-subtitle mt-8 max-w-xl text-lg leading-relaxed text-foreground-secondary">
+        <p className="hero-subtitle mt-5 md:mt-8 max-w-xl text-lg leading-relaxed text-foreground-secondary">
           Websites and applications built with modern frameworks. Brand
           identity, visual systems, and digital experiences.
         </p>
 
-        <div className="hero-cta mt-10 flex flex-wrap items-center gap-4">
+        <div className="hero-cta mt-6 md:mt-10 flex flex-wrap items-center gap-4">
           <a
             href="mailto:hello@lauf.co"
             className="inline-flex items-center gap-3 rounded-full bg-foreground px-6 py-3 font-mono text-[11px] tracking-wider text-background uppercase transition-colors hover:bg-foreground/80"
