@@ -39,7 +39,7 @@ export default function Footer() {
           {/* Left — Copyright */}
           <div>
             <p className="font-mono text-[11px] tracking-wider uppercase">
-              Lauf Studio
+              Lauf
             </p>
             <p className="mt-2 text-sm text-foreground-secondary">
               &copy; {new Date().getFullYear()} All rights reserved.
