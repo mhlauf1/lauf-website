@@ -5,27 +5,27 @@ import { useState, useCallback, useRef, useEffect } from "react";
 const testimonials = [
   {
     quote:
-      "Michael and Clare made the entire process effortless. They took our vision and turned it into something far better than we imagined.",
-    author: "Jordan Brady",
-    company: "Brady Digital Consulting",
-  },
-  {
-    quote:
-      "Working directly with the people building your site makes all the difference. No layers, no miscommunication — just great work.",
-    author: "Ryan Cadence",
+      "The personal attention, availability, and attention to detail made this a great all-around experience. We highly recommend Lauf for any website design or development services.",
+    author: "Peter Mark",
     company: "Cadence Private Capital",
   },
   {
     quote:
-      "They understood our brand immediately and delivered a site that actually wins us business. Best investment we've made.",
-    author: "Alex Stoc",
-    company: "Stoc Advisory",
+      "Lauf delivered exceptional service throughout the entire process. We are thrilled with the end product, and we truly believe the new site has played a pivotal role in the continued growth and success of Brady Digital Consulting.",
+    author: "Jack Brady",
+    company: "Brady Digital Consulting",
   },
   {
     quote:
-      "Lauf brought a level of craft and attention we didn't expect. Every detail was considered.",
-    author: "Sam Embark",
-    company: "Embark Pet Services",
+      "The site is not only beautiful and polished, but it also feels authentic to who we are as a company. We couldn\u2019t be happier with the experience and the end product. Mike and Clare are true pros, and we\u2019d recommend Lauf without hesitation to anyone looking to elevate their online presence.",
+    author: "Vincent Striano",
+    company: "Striano Electric",
+  },
+  {
+    quote:
+      "I\u2019d highly recommend Lauf and Michael to anyone looking for a new or upgraded website. He was fantastic to work with and was very responsive throughout the process. He transformed my run of the mill, self-made Wix website into a first class professional website. I couldn\u2019t be happier with the website he created for me!",
+    author: "Adam Mott",
+    company: "Minnesota Manufacturing Recruiting",
   },
 ];
 
@@ -96,7 +96,7 @@ export default function TestimonialCarousel() {
         <button
           onClick={() => go(-1)}
           aria-label="Previous testimonial"
-          className="grid h-8 w-8 place-items-center rounded-full border border-foreground/10 text-foreground-secondary transition-all hover:border-foreground/30 hover:text-foreground"
+          className="grid h-8 w-8 place-items-center rounded-full bg-accent text-white transition-all hover:bg-accent-hover"
         >
           <svg
             width="14"
@@ -117,7 +117,7 @@ export default function TestimonialCarousel() {
         <button
           onClick={() => go(1)}
           aria-label="Next testimonial"
-          className="grid h-8 w-8 place-items-center rounded-full border border-foreground/10 text-foreground-secondary transition-all hover:border-foreground/30 hover:text-foreground"
+          className="grid h-8 w-8 place-items-center rounded-full bg-accent text-white transition-all hover:bg-accent-hover"
         >
           <svg
             width="14"
