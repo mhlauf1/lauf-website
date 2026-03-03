@@ -121,7 +121,7 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[90vh] md:min-h-auto overflow-hidden pb-24 pt-[18vh]"
+      className="relative min-h-screen md:min-h-auto overflow-hidden pb-24 pt-[18vh]"
     >
       <div className="pointer-events-none relative z-10 px-6 sm:px-12">
         <div className="hero-badge mb-6">
