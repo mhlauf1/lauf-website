@@ -18,6 +18,8 @@ export interface Project {
   images: string[];
   gradient: string;
   url?: string;
+  video?: string;
+  videoBg?: string;
   order: number;
 }
 
@@ -49,7 +51,9 @@ export const projects: Project[] = [
     gradient:
       "linear-gradient(135deg, #f5f0e8 0%, #d4c9b5 30%, #1e3a5f 70%, #0f2440 100%)",
     url: "https://playbookexp.com",
-    order: 1,
+    video: "/videos/playbook-video.mp4",
+    videoBg: "/images/projects/playbook-mockup-1.jpg",
+    order: 2,
   },
   {
     slug: "stoc-advisory",
@@ -78,7 +82,7 @@ export const projects: Project[] = [
     gradient:
       "linear-gradient(135deg, #0a1628 0%, #132744 35%, #1c3d6e 65%, #e8edf4 100%)",
     url: "https://stocadvisory.com",
-    order: 2,
+    order: 1,
   },
   {
     slug: "brady-digital-consulting",
@@ -107,6 +111,8 @@ export const projects: Project[] = [
     gradient:
       "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 35%, #2d2d44 65%, #3a3a5c 100%)",
     url: "https://bradydigitalconsulting.com",
+    video: "/videos/brady-video.mp4",
+    videoBg: "/images/projects/brady-video-bg.png",
     order: 3,
   },
   {
@@ -144,7 +150,7 @@ export const projects: Project[] = [
     client: "Embark Pet Services",
     year: "2024",
     scope: ["Web Design", "Development", "Strategy"],
-    thumbnail: "/images/projects/embark.png",
+    thumbnail: "/images/projects/embark-new.png",
     heroImage: "/images/projects/embark-hero.jpg",
     overview:
       "Embark Pet Services operates a growing network of pet care facilities. We designed a professional, trust-forward website that unifies their multi-location brand and makes it easy for pet owners to find and book services.",
@@ -167,35 +173,35 @@ export const projects: Project[] = [
     url: "https://embarkpetservices.com",
     order: 5,
   },
-  {
-    slug: "hound-around-resort",
-    title: "Where Every Dog Feels at Home",
-    client: "Hound Around Resort",
-    year: "2024",
-    scope: ["Brand Identity", "Web Design", "Development"],
-    thumbnail: "/images/projects/hound-2.png",
-    heroImage: "/images/projects/hound-hero.jpg",
-    overview:
-      "Hound Around Resort is a premium dog boarding and daycare facility. We crafted a warm, inviting brand and website that communicates the care and attention that sets their resort apart from standard kennels.",
-    challenge:
-      "Pet parents choosing overnight boarding need deep reassurance. Hound Around's previous web presence didn't reflect the quality of care they provide, making it difficult to justify their premium positioning against lower-cost competitors.",
-    approach:
-      "We built a brand identity around warm cream tones and forest green — evoking the natural, open-air feel of the resort itself. The website emphasizes transparency, showcasing facilities, daily routines, and staff credentials. Every design decision was made to reduce the anxiety pet parents feel when leaving their dog somewhere new.",
-    results: [
-      "Brand and website launch supporting premium market position",
-      "Facility-forward content building trust before first visit",
-      "Online inquiry volume increasing steadily post-launch",
-    ],
-    images: [
-      "/images/projects/hound-01.jpg",
-      "/images/projects/hound-02.jpg",
-      "/images/projects/hound-03.jpg",
-    ],
-    gradient:
-      "linear-gradient(135deg, #f5f0e3 0%, #e0d5c0 30%, #2d5a3d 65%, #1a3d28 100%)",
-    url: "https://hound-3-frontend.vercel.app",
-    order: 6,
-  },
+  // {
+  //   slug: "hound-around-resort",
+  //   title: "Where Every Dog Feels at Home",
+  //   client: "Hound Around Resort",
+  //   year: "2024",
+  //   scope: ["Brand Identity", "Web Design", "Development"],
+  //   thumbnail: "/images/projects/hound-thumb.png",
+  //   heroImage: "/images/projects/hound-hero.jpg",
+  //   overview:
+  //     "Hound Around Resort is a premium dog boarding and daycare facility. We crafted a warm, inviting brand and website that communicates the care and attention that sets their resort apart from standard kennels.",
+  //   challenge:
+  //     "Pet parents choosing overnight boarding need deep reassurance. Hound Around's previous web presence didn't reflect the quality of care they provide, making it difficult to justify their premium positioning against lower-cost competitors.",
+  //   approach:
+  //     "We built a brand identity around warm cream tones and forest green — evoking the natural, open-air feel of the resort itself. The website emphasizes transparency, showcasing facilities, daily routines, and staff credentials. Every design decision was made to reduce the anxiety pet parents feel when leaving their dog somewhere new.",
+  //   results: [
+  //     "Brand and website launch supporting premium market position",
+  //     "Facility-forward content building trust before first visit",
+  //     "Online inquiry volume increasing steadily post-launch",
+  //   ],
+  //   images: [
+  //     "/images/projects/hound-01.jpg",
+  //     "/images/projects/hound-02.jpg",
+  //     "/images/projects/hound-03.jpg",
+  //   ],
+  //   gradient:
+  //     "linear-gradient(135deg, #f5f0e3 0%, #e0d5c0 30%, #2d5a3d 65%, #1a3d28 100%)",
+  //   url: "https://hound-3-frontend.vercel.app",
+  //   order: 6,
+  // },
   {
     slug: "body-biz",
     title: "Fitness with a Natural Edge",

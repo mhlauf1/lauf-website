@@ -14,7 +14,7 @@ export default function ClientMarquee() {
   const doubled = [...clients, ...clients];
 
   return (
-    <section className="py-20 sm:py-28">
+    <section className="py-8 sm:py-12">
       <div className="px-6 sm:px-12">
         <p className="text-center text-sm text-foreground-secondary">
           Trusted by <span className="text-foreground">startups</span> and{" "}

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/gsap";
+import TransitionLink from "./TransitionLink";
 
 export default function Contact() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -11,18 +12,25 @@ export default function Contact() {
 
     const items = sectionRef.current.querySelectorAll(".contact-reveal");
 
-    const anim = gsap.from(items, {
-      opacity: 0,
-      y: 40,
-      duration: 0.8,
-      stagger: 0.15,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 75%",
-        toggleActions: "play none none none",
+    gsap.set(items, { opacity: 0, y: 40 });
+
+    const anim = gsap.fromTo(
+      items,
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+          toggleActions: "play none none none",
+          once: true,
+        },
       },
-    });
+    );
 
     return () => {
       anim.scrollTrigger?.kill();
@@ -31,7 +39,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <section id="contact" ref={sectionRef} className="py-24 sm:py-40">
+    <section id="contact" ref={sectionRef} className="py-12 sm:py-20">
       <div className="px-6 sm:px-12">
         <h2 className="contact-reveal max-w-3xl text-4xl tracking-tight sm:text-5xl lg:text-6xl">
           Great design begins with a conversation.{" "}
@@ -46,8 +54,8 @@ export default function Contact() {
         </div>
 
         <div className="contact-reveal mt-12 flex flex-wrap gap-4">
-          <a
-            href="mailto:hello@lauf.co"
+          <TransitionLink
+            href="/contact"
             className="inline-flex items-center gap-3 rounded-full bg-foreground px-8 py-4 font-mono text-[11px] tracking-wider text-background uppercase transition-colors hover:bg-foreground/80"
           >
             Let&apos;s Talk
@@ -61,17 +69,17 @@ export default function Contact() {
             >
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-          </a>
-          <a
-            href="mailto:hello@lauf.co"
+          </TransitionLink>
+          <TransitionLink
+            href="/contact"
             className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-8 py-4 font-mono text-[11px] tracking-wider uppercase transition-colors hover:bg-foreground hover:text-background"
           >
             Send a message
-          </a>
+          </TransitionLink>
         </div>
 
         <p className="contact-reveal mt-8 text-sm text-foreground-secondary">
-          hello@lauf.co
+          michael@lauf.co
         </p>
       </div>
     </section>

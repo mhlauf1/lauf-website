@@ -36,12 +36,7 @@ const services = [
     title: "Strategy",
     description:
       "We help companies find clarity before they build. Positioning, content strategy, and digital roadmaps that align teams and drive real outcomes.",
-    tags: [
-      "Positioning",
-      "Content Strategy",
-      "Digital Roadmaps",
-      "Consulting",
-    ],
+    tags: ["Positioning", "Content Strategy", "Digital Roadmaps", "Consulting"],
   },
 ];
 
@@ -53,18 +48,25 @@ export default function Services() {
 
     const cards = sectionRef.current.querySelectorAll(".service-card");
 
+    gsap.set(cards, { opacity: 0, y: 50 });
+
     const anims = Array.from(cards).map((card) =>
-      gsap.from(card, {
-        opacity: 0,
-        y: 50,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: card,
-          start: "top 85%",
-          toggleActions: "play none none none",
+      gsap.fromTo(
+        card,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none none",
+            once: true,
+          },
         },
-      })
+      ),
     );
 
     return () => {
@@ -76,17 +78,17 @@ export default function Services() {
   }, []);
 
   return (
-    <section id="services" ref={sectionRef} className="py-20 sm:py-32">
+    <section id="services" ref={sectionRef} className="py-10 sm:py-12">
       <div className="px-6 sm:px-12">
         {/* Section header */}
-        <div className="mb-16">
+        <div className="mb-8 md:mb-10">
           <p className="font-mono text-[11px] tracking-wider text-foreground-secondary uppercase">
             What we do
           </p>
-          <h2 className="mt-2 max-w-2xl text-4xl tracking-tight sm:text-5xl">
+          <h2 className="mt-2 md:mt-3 max-w-2xl text-4xl tracking-tight sm:text-5xl">
             Services
           </h2>
-          <p className="mt-6 max-w-xl text-lg text-foreground-secondary">
+          <p className="mt-4 max-w-xl text-lg text-foreground-secondary">
             We adapt our approach to each client, to deliver value in every
             project.
           </p>

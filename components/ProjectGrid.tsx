@@ -5,21 +5,15 @@ export default function ProjectGrid() {
   const projects = getSortedProjects();
 
   return (
-    <section id="work" className="py-16 sm:py-20">
+    <section id="work" className="py-16 sm:py-16">
       <div className="px-6 sm:px-12">
         {/* Section header */}
-        <div className="mb-10 flex items-end justify-between">
+        <div className="mb-8 flex items-end justify-between">
           <div>
             <p className="font-mono text-[11px] tracking-wider text-foreground-secondary uppercase">
               Selected works
             </p>
-            <h2 className="mt-2 md:mt-3 text-4xl tracking-tight sm:text-5xl">
-              Portfolio
-            </h2>
           </div>
-          <span className="hidden font-mono text-[11px] tracking-wider text-foreground-secondary uppercase sm:block">
-            &lsquo;23&ndash;&lsquo;25
-          </span>
         </div>
 
         {/* Project grid */}

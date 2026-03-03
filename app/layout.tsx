@@ -78,11 +78,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${switzer.variable} ${geistSans.variable} ${tiempos.variable} ${geistMono.variable} font-sans antialiased`}
+        className={`${switzer.variable} ${geistSans.variable} ${tiempos.variable} ${geistMono.variable} flex min-h-screen flex-col font-sans antialiased`}
       >
         <PageTransitionProvider>
           <TopBar />
-          <main className="min-h-screen">{children}</main>
+          <main className="flex-1">{children}</main>
           <Footer />
           <Nav />
         </PageTransitionProvider>

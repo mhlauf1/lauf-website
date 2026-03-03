@@ -3,14 +3,13 @@ import PageAnimator from "@/components/PageAnimator";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description:
-    "Get in touch with Lauf Studio. Based in Madison, Wisconsin.",
+  description: "Get in touch with Lauf Studio. Based in Madison, Wisconsin.",
 };
 
 export default function ContactPage() {
   return (
     <PageAnimator>
-      <section className="pb-32 pt-32 sm:pb-48 sm:pt-44">
+      <section className="pb-8 pt-32 sm:pb-12 sm:pt-44">
         <div className="px-6 sm:px-12">
           <h1 className="page-heading text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
             Let&apos;s work together
@@ -23,10 +22,10 @@ export default function ContactPage() {
           <div className="page-content mt-16">
             <p className="text-sm text-foreground-secondary">Email</p>
             <a
-              href="mailto:hello@lauf.co"
+              href="mailto:michael@lauf.co"
               className="link-underline mt-2 inline-block text-2xl font-medium sm:text-3xl"
             >
-              hello@lauf.co
+              michael@lauf.co
             </a>
           </div>
 

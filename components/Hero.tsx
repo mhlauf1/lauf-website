@@ -121,11 +121,11 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen overflow-hidden pb-24 pt-[18vh]"
+      className="relative min-h-[90vh] md:min-h-auto overflow-hidden pb-24 pt-[18vh]"
     >
-      <div className="relative z-10 px-6 sm:px-12">
+      <div className="pointer-events-none relative z-10 px-6 sm:px-12">
         <div className="hero-badge mb-6">
-          <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 px-4 py-1.5 font-mono text-[10px] tracking-wider text-accent uppercase">
+          <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 px-4 py-1.5 font-mono text-[10px] md:text-[11px] tracking-wider text-accent uppercase">
             <span className="inline-block h-2 w-2 rounded-full bg-accent" />
             Now booking for Q2 2026
           </span>
@@ -159,10 +159,10 @@ export default function Hero() {
           identity, visual systems, and digital experiences.
         </p>
 
-        <div className="hero-cta mt-6 md:mt-10 flex flex-wrap items-center gap-4">
-          <a
-            href="mailto:hello@lauf.co"
-            className="inline-flex items-center gap-3 rounded-full bg-foreground px-6 py-3 font-mono text-[11px] tracking-wider text-background uppercase transition-colors hover:bg-foreground/80"
+        <div className="hero-cta mt-6 md:mt-10 flex flex-wrap items-center gap-4 pointer-events-auto">
+          <TransitionLink
+            href="/contact"
+            className="inline-flex items-center gap-3 rounded-full bg-foreground px-6 py-3 font-mono text-[11px] md:text-[12px] tracking-wider text-background uppercase transition-colors hover:bg-foreground/80"
           >
             <svg
               width="16"
@@ -178,20 +178,20 @@ export default function Hero() {
               <path d="M2 12l10 5 10-5" />
             </svg>
             Get in touch
-          </a>
+          </TransitionLink>
           <TransitionLink
             href="/work"
-            className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 font-mono text-[11px] tracking-wider uppercase transition-colors hover:bg-foreground hover:text-background"
+            className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 font-mono text-[11px] md:text-[12px] tracking-wider uppercase transition-colors hover:bg-foreground hover:text-background"
           >
             View Work
           </TransitionLink>
         </div>
 
-        <div className="hero-labels hidden mt-16 md:flex flex-wrap gap-3">
+        <div className="hero-labels hidden mt-12 md:flex flex-wrap gap-3">
           {serviceLabels.map((label) => (
             <span
               key={label}
-              className="rounded-full border border-border px-4 py-1.5 font-mono text-[10px] tracking-wider text-foreground-secondary uppercase"
+              className="rounded-full border border-border px-4 py-1.5 font-mono text-[10px] md:text-[11px] tracking-wider text-foreground-secondary uppercase"
             >
               {label}
             </span>
@@ -200,7 +200,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll arrow — bottom left */}
-      <div className="hero-arrow absolute bottom-8 left-6 z-20 hidden sm:left-12 sm:block">
+      <div className="hero-arrow absolute bottom-6 left-6 z-20 hidden sm:left-12 sm:block">
         <a
           href="#work"
           onClick={(e) => {

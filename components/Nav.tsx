@@ -56,12 +56,12 @@ export default function Nav() {
 
         <div className="mx-0.5 h-4 w-px bg-background/10" />
 
-        <a
-          href="mailto:hello@lauf.co"
+        <TransitionLink
+          href="/contact"
           className="whitespace-nowrap rounded-full bg-accent px-5 py-2.5 font-mono text-[11px] tracking-wider text-white uppercase transition-colors hover:bg-accent-hover"
         >
           Get in touch
-        </a>
+        </TransitionLink>
       </div>
     </nav>
   );

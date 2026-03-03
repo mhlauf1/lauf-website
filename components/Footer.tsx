@@ -14,7 +14,7 @@ function LocalTime() {
           minute: "2-digit",
           second: "2-digit",
           hour12: false,
-        })
+        }),
       );
     };
     update();
@@ -33,8 +33,8 @@ function LocalTime() {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border pb-24">
-      <div className="px-6 py-12 sm:px-12">
+    <footer className="border-t mb-4 border-border">
+      <div className="px-6 py-8 sm:px-12">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
           {/* Left — Copyright */}
           <div>

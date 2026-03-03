@@ -1,3 +1,5 @@
+import TransitionLink from "./TransitionLink";
+
 export default function CTA() {
   return (
     <section className="cs-section page-section py-24 sm:py-32">
@@ -9,8 +11,8 @@ export default function CTA() {
           We&apos;d love to hear about it. Let&apos;s talk.
         </p>
         <div className="mt-8 flex flex-wrap gap-4">
-          <a
-            href="mailto:hello@lauf.co"
+          <TransitionLink
+            href="/contact"
             className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 font-mono text-[11px] tracking-wider text-background uppercase transition-colors hover:bg-foreground/80"
           >
             Get in touch
@@ -24,7 +26,7 @@ export default function CTA() {
             >
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-          </a>
+          </TransitionLink>
         </div>
       </div>
     </section>

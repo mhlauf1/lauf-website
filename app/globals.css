@@ -111,3 +111,7 @@ h3 {
 .cs-hero-image { clip-path: inset(100% 0% 0% 0%); }
 .cs-section { opacity: 0; transform: translateY(50px); }
 .cs-grid-image { opacity: 0; transform: translateY(40px); }
+
+.mn-icon { opacity: 0; }
+.mn-headline { opacity: 0; }
+.mn-subtitle { opacity: 0; }
