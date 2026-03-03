@@ -1,30 +1,50 @@
-import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-export async function POST(request: Request) {
-  try {
-    const resend = new Resend(process.env.RESEND_API_KEY);
-    const { name, email, message } = await request.json();
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-    if (!name || !email || !message) {
-      return NextResponse.json(
-        { error: "Name, email, and message are required." },
+let lastRequestTimestamp = 0;
+
+export async function POST(req: Request) {
+  const now = Date.now();
+  if (now - lastRequestTimestamp < 3000) {
+    return new Response(
+      JSON.stringify({ success: false, error: "Rate limit exceeded" }),
+      { status: 429 },
+    );
+  }
+  lastRequestTimestamp = now;
+
+  try {
+    const { name, email, message } = await req.json();
+
+    if (!name || !email || !message || message.length > 5000) {
+      return new Response(
+        JSON.stringify({ success: false, error: "Invalid input" }),
         { status: 400 },
       );
     }
 
     await resend.emails.send({
-      from: "Lauf Website <onboarding@resend.dev>",
-      to: "michael@lauf.co",
+      from: "Lauf Contact Form <contact@lauf.co>",
+      to: ["michael@lauf.co"],
+      subject: `New Contact Form Submission from ${name}`,
       replyTo: email,
-      subject: `New inquiry from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
+      text: `
+New inquiry received:
+
+Name: ${name}
+Email: ${email}
+
+Message:
+${message}
+      `,
     });
 
-    return NextResponse.json({ success: true });
-  } catch {
-    return NextResponse.json(
-      { error: "Failed to send message. Please try again." },
+    return new Response(JSON.stringify({ success: true }), { status: 200 });
+  } catch (error) {
+    console.error("Resend error:", error);
+    return new Response(
+      JSON.stringify({ success: false, error: "Internal server error" }),
       { status: 500 },
     );
   }

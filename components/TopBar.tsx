@@ -30,7 +30,7 @@ export default function TopBar() {
   const madisonTime = useMadisonTime();
 
   return (
-    <div className="fixed top-6 left-6 right-6 z-50 flex items-center justify-between sm:left-12 sm:right-12">
+    <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-background/70 px-6 py-4 backdrop-blur-sm sm:px-12">
       <TransitionLink href="/">
         <Image
           src="/images/projects/L-logo.png"
@@ -42,9 +42,20 @@ export default function TopBar() {
         />
       </TransitionLink>
 
-      <span className="font-mono text-[11px] tracking-wider text-foreground-secondary uppercase">
+      {/* Desktop: Madison time */}
+      <span className="hidden font-mono text-[11px] tracking-wider text-foreground-secondary uppercase md:block">
         Madison WI — {madisonTime}
       </span>
+
+      {/* Mobile: Hamburger button */}
+      <button
+        onClick={() => window.dispatchEvent(new CustomEvent("open-mobile-nav"))}
+        className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
+        aria-label="Open menu"
+      >
+        <span className="block h-px w-5 bg-foreground" />
+        <span className="block h-px w-5 bg-foreground" />
+      </button>
     </div>
   );
 }

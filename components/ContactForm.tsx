@@ -30,7 +30,7 @@ export default function ContactForm() {
   if (status === "sent") {
     return (
       <p className="text-lg font-medium">
-        Thanks for reaching out — we&apos;ll be in touch soon.
+        Thanks for reaching out, we&apos;ll be in touch soon.
       </p>
     );
   }
