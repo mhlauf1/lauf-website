@@ -69,7 +69,7 @@ export default function ProjectCard({
       className="group block"
       style={{ opacity: 0, transform: "translateY(60px)" }}
     >
-      <div className="relative aspect-16/9 overflow-hidden rounded-xl">
+      <div className="relative aspect-16/9 overflow-hidden rounded-lg">
         {project.slug === "mn-manufacturing-recruiting" ? (
           <MinnesotaManufacturing compact />
         ) : project.video ? (
@@ -111,8 +111,10 @@ export default function ProjectCard({
 
       <div className="mt-4 flex items-start justify-between gap-4">
         <div>
-          <p className="font-sans text-2xl  tracking-tight">{project.client}</p>
-          <p className="text-foreground-secondary/80 text-lg">
+          <p className="font-sans text-xl md:text-2xl  tracking-tight">
+            {project.client}
+          </p>
+          <p className="text-foreground-secondary/80 text-base md:text-lg">
             {project.title}
           </p>
         </div>

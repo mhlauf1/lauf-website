@@ -61,7 +61,7 @@ export const projects: Project[] = [
     client: "Stoc Advisory",
     year: "2025",
     scope: ["Web Design", "Development", "Strategy"],
-    thumbnail: "/images/projects/stoc-thumb.jpg",
+    thumbnail: "/images/projects/stoc-hero.png",
     heroImage: "/images/projects/stoc-hero.jpg",
     overview:
       "Stoc Advisory guides business owners through the acquisition process — from valuation to close. We built a digital presence that communicates institutional credibility and the personal attention that sets Stoc apart from larger advisory firms.",
@@ -121,7 +121,7 @@ export const projects: Project[] = [
     client: "Cadence Private Capital",
     year: "2024",
     scope: ["Brand Identity", "Web Design", "Development"],
-    thumbnail: "/images/projects/cadence-main-2.png",
+    thumbnail: "/images/projects/cpc-new.png",
     heroImage: "/images/projects/cadence-hero.jpg",
     overview:
       "Cadence Private Capital is a private equity firm focused on lower middle-market investments. We created a polished digital presence that balances institutional gravitas with the firm's hands-on, relationship-driven investment philosophy.",
@@ -229,7 +229,7 @@ export const projects: Project[] = [
     gradient:
       "linear-gradient(135deg, #0a2a3a 0%, #1a4a5a 30%, #2a7a6a 60%, #4aaa8a 100%)",
     url: "https://thebody.biz",
-    order: 7,
+    order: 8,
   },
   {
     slug: "mn-manufacturing-recruiting",
@@ -258,7 +258,7 @@ export const projects: Project[] = [
     gradient:
       "linear-gradient(135deg, #1a2a2a 0%, #2a3a3a 30%, #0a8a9a 60%, #2acada 100%)",
     url: "https://mnmfgrecruiting.com",
-    order: 8,
+    order: 7,
   },
   {
     slug: "striano-electric",
@@ -266,7 +266,7 @@ export const projects: Project[] = [
     client: "Striano Electric",
     year: "2023",
     scope: ["Web Design", "Development"],
-    thumbnail: "/images/projects/striano-thumb.jpg",
+    thumbnail: "/images/projects/striano-main.png",
     heroImage: "/images/projects/striano-hero.jpg",
     overview:
       "Striano Electric is a full-service electrical contractor operating across New York City. We built a clean, professional website that reflects the quality of their work and helps them win commercial and residential contracts in a competitive market.",
@@ -280,13 +280,15 @@ export const projects: Project[] = [
       "Credentialing section building trust with property managers and GCs",
     ],
     images: [
-      "/images/projects/striano-01.jpg",
+      "/images/projects/striano-main.png",
       "/images/projects/striano-02.jpg",
       "/images/projects/striano-03.jpg",
     ],
     gradient:
       "linear-gradient(135deg, #2a1a1a 0%, #5c2a2a 30%, #8a3a3a 55%, #d4c4b0 100%)",
     url: "https://strianoelectric.com",
+    video: "/videos/striano-video.mp4",
+    videoBg: "/images/projects/striano-main.png",
     order: 9,
   },
 ];

@@ -37,7 +37,7 @@ export default function MinnesotaManufacturing({
     tl.fromTo(
       icon,
       { opacity: 0, scale: 0.9 },
-      { opacity: 1, scale: 1, duration: 0.8 },
+      { opacity: 1, scale: 1, duration: 0.5 },
     )
       .fromTo(
         headline,
@@ -45,16 +45,16 @@ export default function MinnesotaManufacturing({
         {
           opacity: 1,
           clipPath: "inset(0 0 0% 0)",
-          duration: 0.8,
+          duration: 0.5,
           ease: "power2.inOut",
         },
-        "-=0.3",
+        "-=0.2",
       )
       .fromTo(
         subtitle,
         { opacity: 0, y: 15 },
-        { opacity: 1, y: 0, duration: 0.6 },
-        "-=0.3",
+        { opacity: 1, y: 0, duration: 0.4 },
+        "-=0.2",
       );
 
     // Ambient breathing on the Minnesota icon
@@ -65,7 +65,7 @@ export default function MinnesotaManufacturing({
         ease: "sine.inOut",
         yoyo: true,
         repeat: -1,
-        delay: 1.5,
+        delay: 1,
       });
     }
 
@@ -80,8 +80,8 @@ export default function MinnesotaManufacturing({
     const delay = setTimeout(() => {
       intervalRef.current = setInterval(() => {
         setActiveIndex((prev) => (prev + 1) % phrases.length);
-      }, 4000);
-    }, 2000);
+      }, 3000);
+    }, 1200);
 
     return () => {
       clearTimeout(delay);
@@ -109,15 +109,15 @@ export default function MinnesotaManufacturing({
       // Wipe out current phrase (top-to-bottom)
       tl.to(currentSpan, {
         clipPath: "inset(100% 0 0 0)",
-        duration: 0.6,
+        duration: 0.4,
         ease: "power2.inOut",
       })
         // Wipe in next phrase (bottom-to-top)
         .fromTo(
           nextSpan,
           { clipPath: "inset(0 0 100% 0)" },
-          { clipPath: "inset(0 0 0% 0)", duration: 0.6, ease: "power2.inOut" },
-          "-=0.3",
+          { clipPath: "inset(0 0 0% 0)", duration: 0.4, ease: "power2.inOut" },
+          "-=0.2",
         );
     }
 
@@ -131,7 +131,7 @@ export default function MinnesotaManufacturing({
       ref={sectionRef as React.RefObject<HTMLDivElement & HTMLElement>}
       className={
         compact
-          ? "absolute inset-0 flex flex-col items-center justify-center bg-background border border-border rounded-xl"
+          ? "absolute inset-0 flex flex-col items-center justify-center bg-background border border-border rounded-lg"
           : "relative flex min-h-screen flex-col items-center justify-center px-6"
       }
       style={{ backgroundImage: "none" }}
@@ -169,8 +169,7 @@ export default function MinnesotaManufacturing({
                 }}
                 className="absolute inset-x-0 top-0"
                 style={{
-                  clipPath:
-                    i === 0 ? "inset(0 0 0% 0)" : "inset(0 0 100% 0)",
+                  clipPath: i === 0 ? "inset(0 0 0% 0)" : "inset(0 0 100% 0)",
                 }}
               >
                 {phrase}
@@ -183,9 +182,7 @@ export default function MinnesotaManufacturing({
       {/* Subtitle */}
       <p
         className={`mn-subtitle font-mono tracking-widest text-foreground-secondary uppercase ${
-          compact
-            ? "mt-4 text-[9px] sm:text-[10px]"
-            : "mt-8 text-xs"
+          compact ? "mt-4 text-[9px] sm:text-[10px]" : "mt-8 text-xs"
         }`}
       >
         Minnesota Manufacturing Recruiting
