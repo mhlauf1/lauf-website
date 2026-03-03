@@ -17,7 +17,7 @@ const TransitionLink = forwardRef<HTMLAnchorElement, TransitionLinkProps>(
     };
 
     return <Link ref={ref} href={href} onClick={handleClick} {...props} />;
-  }
+  },
 );
 
 export default TransitionLink;

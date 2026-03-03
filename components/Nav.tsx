@@ -7,6 +7,7 @@ import TransitionLink from "./TransitionLink";
 const navLinks = [
   { href: "/work", label: "Work" },
   { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
 ];
 
 export default function Nav() {
@@ -39,16 +40,13 @@ export default function Nav() {
   }, [hidden]);
 
   return (
-    <nav
-      ref={navRef}
-      className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2"
-    >
+    <nav ref={navRef} className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2">
       <div className="flex items-center gap-1 rounded-full bg-foreground/95 py-1.5 pl-1.5 pr-1.5 shadow-2xl backdrop-blur-md">
         {[{ href: "/", label: "Home" }, ...navLinks].map((link) => (
           <TransitionLink
             key={link.href}
             href={link.href}
-            className="rounded-full px-4 py-2 font-mono text-[11px] tracking-wider text-background/60 uppercase transition-colors hover:bg-background/10 hover:text-background"
+            className="rounded-full px-4 py-2 font-mono text-[11px] tracking-wider text-background/80 uppercase transition-colors hover:bg-background/10 hover:text-background"
           >
             {link.label}
           </TransitionLink>

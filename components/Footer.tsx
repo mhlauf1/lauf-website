@@ -57,7 +57,7 @@ export default function Footer() {
           </div>
 
           {/* Right — Links */}
-          <div className="flex flex-col gap-2 sm:items-end">
+          <div className="flex mb-12 md:mb-0 flex-col gap-2 sm:items-end">
             <a
               href="https://x.com"
               target="_blank"

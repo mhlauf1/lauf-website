@@ -154,12 +154,12 @@ export default function Hero() {
           </span>
         </h1>
 
-        <p className="hero-subtitle mt-5 md:mt-8 max-w-xl text-lg leading-relaxed text-foreground-secondary">
+        <p className="hero-subtitle mt-4 md:mt-5 max-w-lg text-lg leading-relaxed text-foreground-secondary">
           Websites and applications built with modern frameworks. Brand
           identity, visual systems, and digital experiences.
         </p>
 
-        <div className="hero-cta mt-6 md:mt-10 flex flex-wrap items-center gap-4 pointer-events-auto">
+        <div className="hero-cta mt-6 md:mt-8 flex flex-wrap items-center gap-4 pointer-events-auto">
           <TransitionLink
             href="/contact"
             className="inline-flex items-center gap-3 rounded-full bg-foreground px-6 py-3 font-mono text-[11px] md:text-[12px] tracking-wider text-background uppercase transition-colors hover:bg-foreground/80"

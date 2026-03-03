@@ -133,7 +133,7 @@ export default function HeroProjects() {
               key={`${project.slug}-${i}`}
               href={`/work/${project.slug}`}
               aria-label={`View ${project.client} project`}
-              className="marquee-card relative block flex-shrink-0 overflow-hidden rounded-lg shadow-lg"
+              className="marquee-card relative block flex-shrink-0 overflow-hidden rounded-md shadow-lg"
               style={{ width: "57vw", aspectRatio: "4 / 3" }}
             >
               <Image
@@ -165,7 +165,7 @@ export default function HeroProjects() {
               key={project.slug}
               href={`/work/${project.slug}`}
               aria-label={`View ${project.client} project`}
-              className="hero-thumb absolute overflow-hidden rounded-lg shadow-xl transition-shadow hover:shadow-2xl"
+              className="hero-thumb absolute overflow-hidden rounded-md shadow-xl transition-shadow hover:shadow-2xl"
               style={{
                 width: CARD_W,
                 height: CARD_H,

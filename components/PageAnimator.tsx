@@ -55,6 +55,21 @@ export default function PageAnimator({
         "-=0.5"
       );
 
+      const earlySections = container.querySelectorAll(".page-section-early");
+      if (earlySections.length) {
+        tl.to(
+          earlySections,
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "expo.out",
+            stagger: 0.12,
+          },
+          "-=0.3"
+        );
+      }
+
       // Below-fold scroll-triggered reveals
       const sections = container.querySelectorAll(".page-section");
       sections.forEach((section) => {

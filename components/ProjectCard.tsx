@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import TransitionLink from "./TransitionLink";
 import Image from "next/image";
 import { gsap } from "@/lib/gsap";
 import type { Project } from "@/data/projects";
@@ -21,6 +20,21 @@ export default function ProjectCard({
     if (!cardRef.current) return;
     const el = cardRef.current;
 
+    const isDesktop = window.innerWidth >= 768;
+    const isFirstRow = index < 2;
+
+    // First 2 cards on desktop: animate in with the hero instead of on scroll
+    if (isDesktop && isFirstRow) {
+      const anim = gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: "power2.out",
+        delay: 0.7 + index * 0.1,
+      });
+      return () => anim.kill();
+    }
+
     const anim = gsap.to(el, {
       opacity: 1,
       y: 0,
@@ -29,7 +43,7 @@ export default function ProjectCard({
       delay: index % 2 === 0 ? 0 : 0.1,
       scrollTrigger: {
         trigger: el,
-        start: window.innerWidth < 768 ? "top 98%" : "top 85%",
+        start: isDesktop ? "top 85%" : "top 98%",
         toggleActions: "play none none none",
       },
     });
@@ -63,11 +77,13 @@ export default function ProjectCard({
   const bgImage = project.videoBg || project.thumbnail;
 
   return (
-    <TransitionLink
+    <a
       ref={cardRef}
-      href={`/work/${project.slug}`}
-      className="group block"
-      style={{ opacity: 0, transform: "translateY(60px)" }}
+      href={project.url || "#"}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block cursor-pointer"
+      style={{ opacity: 0, transform: "translateY(30px)" }}
     >
       <div className="relative aspect-16/9 overflow-hidden rounded-lg">
         {project.slug === "mn-manufacturing-recruiting" ? (
@@ -141,6 +157,6 @@ export default function ProjectCard({
           </span>
         ))}
       </div>
-    </TransitionLink>
+    </a>
   );
 }

@@ -49,6 +49,11 @@ h3 {
   color: var(--color-background);
 }
 
+a,
+button {
+  cursor: pointer;
+}
+
 /* Animated link underline */
 .link-underline {
   position: relative;
@@ -103,6 +108,7 @@ h3 {
 .page-subheading { opacity: 0; transform: translateY(20px); }
 .page-content { opacity: 0; transform: translateY(20px); }
 .page-section { opacity: 0; transform: translateY(40px); }
+.page-section-early { opacity: 0; transform: translateY(40px); }
 
 .cs-tags { opacity: 0; transform: translateX(-40px); }
 .cs-title { opacity: 0; transform: translateY(60px); }

@@ -6,15 +6,16 @@ import { gsap } from "@/lib/gsap";
 const services = [
   {
     number: "01",
-    title: "Product Design",
+    title: "Design",
     description:
-      "We shape how your brand looks, feels, and communicates — from visual identity to interface design. Every pixel is intentional, every system built to scale.",
+      "We work together to shape how your online presense looks, feels, and communicates. From visual identity to interface design, every system built to scale.",
     tags: [
-      "Brand Identity",
+      "Web & Mobile Design",
       "UI/UX Design",
+      "Brand Identity",
       "Design Systems",
-      "Visual Systems",
-      "Typography",
+      "Art Direction",
+      "Motion Design",
     ],
   },
   {
@@ -23,19 +24,20 @@ const services = [
     description:
       "We build fast, accessible websites and applications using modern frameworks. Clean code, thoughtful architecture, and performance you can measure.",
     tags: [
+      "Websites & Apps",
       "Next.js",
       "React",
       "Full-Stack",
-      "Websites",
       "Applications",
       "CMS Integration",
+      "Email Systems",
     ],
   },
   {
     number: "03",
-    title: "Strategy",
+    title: "Strategy & Systems",
     description:
-      "We help companies find clarity before they build. Positioning, content strategy, and digital roadmaps that align teams and drive real outcomes.",
+      "We help companies replace outdated websites, email systems, and tools with modern solutions that perform better, look better, and save real time and money.",
     tags: ["Positioning", "Content Strategy", "Digital Roadmaps", "Consulting"],
   },
 ];
@@ -95,7 +97,7 @@ export default function Services() {
         </div>
 
         {/* Service cards */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {services.map((service) => (
             <div
               key={service.number}

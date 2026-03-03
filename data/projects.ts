@@ -29,7 +29,7 @@ export const projects: Project[] = [
     title: "A Smarter Way to Manage Your Office",
     client: "Playbook",
     year: "2025",
-    scope: ["Brand Identity", "Web Design", "Development"],
+    scope: ["Web Development", "Next.js", "Sanity"],
     thumbnail: "/images/projects/playbook-mockup-1.jpg",
     heroImage: "/images/projects/playbook-mockup-1.jpg",
     overview:
@@ -53,14 +53,14 @@ export const projects: Project[] = [
     url: "https://playbookexp.com",
     video: "/videos/playbook-video.mp4",
     videoBg: "/images/projects/playbook-mockup-1.jpg",
-    order: 2,
+    order: 1,
   },
   {
     slug: "stoc-advisory",
     title: "Confidence at Every Stage of the Deal",
     client: "Stoc Advisory",
     year: "2025",
-    scope: ["Web Design", "Development", "Strategy"],
+    scope: ["Web Design", "Web Development", "Next.js", "Art Direction", "Content & Assets"],
     thumbnail: "/images/projects/stoc-hero.png",
     heroImage: "/images/projects/stoc-hero.jpg",
     overview:
@@ -82,14 +82,14 @@ export const projects: Project[] = [
     gradient:
       "linear-gradient(135deg, #0a1628 0%, #132744 35%, #1c3d6e 65%, #e8edf4 100%)",
     url: "https://stocadvisory.com",
-    order: 1,
+    order: 2,
   },
   {
     slug: "brady-digital-consulting",
     title: "Turning Amazon into a Growth Engine",
     client: "Brady Digital Consulting",
     year: "2025",
-    scope: ["Web Design", "Development", "Content"],
+    scope: ["Web Design", "Web Development", "Next.js", "Art Direction", "Content & Assets"],
     thumbnail: "/images/projects/brady-main.png",
     heroImage: "/images/projects/brady-hero.jpg",
     overview:
@@ -113,14 +113,14 @@ export const projects: Project[] = [
     url: "https://bradydigitalconsulting.com",
     video: "/videos/brady-video.mp4",
     videoBg: "/images/projects/brady-video-bg.png",
-    order: 3,
+    order: 4,
   },
   {
     slug: "cadence-private-capital",
     title: "Institutional Presence, Personal Approach",
     client: "Cadence Private Capital",
     year: "2024",
-    scope: ["Brand Identity", "Web Design", "Development"],
+    scope: ["Web Design", "Web Development", "Next.js", "Content & Assets"],
     thumbnail: "/images/projects/cpc-new.png",
     heroImage: "/images/projects/cadence-hero.jpg",
     overview:
@@ -142,14 +142,14 @@ export const projects: Project[] = [
     gradient:
       "linear-gradient(135deg, #1a3a5c 0%, #2a5a8c 35%, #4a8abf 65%, #e8f0f8 100%)",
     url: "https://cadenceprivatecapital.com",
-    order: 4,
+    order: 3,
   },
   {
     slug: "embark-pet-services",
     title: "Building a Network Pet Owners Trust",
     client: "Embark Pet Services",
     year: "2024",
-    scope: ["Web Design", "Development", "Strategy"],
+    scope: ["Web Design", "Web Development", "Next.js", "Art Direction", "Content & Assets", "Systems"],
     thumbnail: "/images/projects/embark-new.png",
     heroImage: "/images/projects/embark-hero.jpg",
     overview:
@@ -207,7 +207,7 @@ export const projects: Project[] = [
     title: "Fitness with a Natural Edge",
     client: "Body Biz",
     year: "2024",
-    scope: ["Web Design", "Development"],
+    scope: ["Web Design", "Webflow Development", "Stripe", "Ecommerce", "Custom Dashboard", "Systems"],
     thumbnail: "/images/projects/body-biz-2.png",
     heroImage: "/images/projects/body-hero.jpg",
     overview:
@@ -229,14 +229,14 @@ export const projects: Project[] = [
     gradient:
       "linear-gradient(135deg, #0a2a3a 0%, #1a4a5a 30%, #2a7a6a 60%, #4aaa8a 100%)",
     url: "https://thebody.biz",
-    order: 8,
+    order: 6,
   },
   {
     slug: "mn-manufacturing-recruiting",
     title: "Connecting Talent to the Shop Floor",
     client: "MN Manufacturing Recruiting",
     year: "2023",
-    scope: ["Web Design", "Development", "Content"],
+    scope: ["Web Design", "Web Development", "Next.js", "Content & Assets"],
     thumbnail: "/images/projects/mn-thumb.jpg",
     heroImage: "/images/projects/mn-hero.jpg",
     overview:
@@ -265,7 +265,7 @@ export const projects: Project[] = [
     title: "Powering New York, One Project at a Time",
     client: "Striano Electric",
     year: "2023",
-    scope: ["Web Design", "Development"],
+    scope: ["Web Design", "Web Development", "Next.js", "Content & Assets"],
     thumbnail: "/images/projects/striano-main.png",
     heroImage: "/images/projects/striano-hero.jpg",
     overview:

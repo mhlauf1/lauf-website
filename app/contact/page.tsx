@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageAnimator from "@/components/PageAnimator";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -20,6 +21,10 @@ export default function ContactPage() {
           </p>
 
           <div className="page-content mt-16">
+            <ContactForm />
+          </div>
+
+          <div className="page-section mt-16">
             <p className="text-sm text-foreground-secondary">Email</p>
             <a
               href="mailto:michael@lauf.co"
