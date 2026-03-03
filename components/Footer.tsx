@@ -58,28 +58,28 @@ export default function Footer() {
 
           {/* Right — Links */}
           <div className="flex flex-col gap-2 sm:items-end">
-            <a
+            {/* <a
               href="https://x.com"
               target="_blank"
               rel="noopener noreferrer"
               className="link-underline text-sm text-foreground-secondary transition-colors hover:text-foreground"
             >
               X / Twitter
-            </a>
+            </a> */}
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/laufco"
               target="_blank"
               rel="noopener noreferrer"
               className="link-underline text-sm text-foreground-secondary transition-colors hover:text-foreground"
             >
               LinkedIn
             </a>
-            <a
+            {/* <a
               href="/privacy"
               className="link-underline text-sm text-foreground-secondary transition-colors hover:text-foreground"
             >
               Privacy Policy
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
