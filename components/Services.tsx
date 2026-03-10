@@ -8,7 +8,7 @@ const services = [
     number: "01",
     title: "Design",
     description:
-      "We work together to shape how your online presense looks, feels, and communicates. From visual identity to interface design, every system built to scale.",
+      "We work together to shape how your online presence looks, feels, and communicates. From visual identity to interface design, every system built to scale.",
     tags: [
       "Web & Mobile Design",
       "UI/UX Design",

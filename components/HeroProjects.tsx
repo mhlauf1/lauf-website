@@ -8,7 +8,7 @@ import { useTransitionReady } from "./PageTransitionProvider";
 import { getSortedProjects } from "@/data/projects";
 
 const projects = getSortedProjects().slice(0, 4);
-const CARD_W = 230;
+const CARD_W = 290;
 const CARD_H = 170;
 const PEEK = 35;
 const GAP = 16; // px gap between marquee cards
@@ -134,7 +134,7 @@ export default function HeroProjects() {
               href={`/work/${project.slug}`}
               aria-label={`View ${project.client} project`}
               className="marquee-card relative block flex-shrink-0 overflow-hidden rounded-md shadow-lg"
-              style={{ width: "57vw", aspectRatio: "4 / 3" }}
+              style={{ width: "69vw", aspectRatio: "9 / 5" }}
             >
               <Image
                 src={project.thumbnail}
@@ -181,7 +181,7 @@ export default function HeroProjects() {
                 alt={project.client}
                 fill
                 className="object-cover"
-                sizes="230px"
+                sizes="270px"
               />
               <span className="card-label pointer-events-none absolute inset-x-0 bottom-0 flex items-end bg-gradient-to-t from-black/70 to-transparent px-3 pb-2 pt-8 font-mono text-[10px] tracking-wider text-white uppercase opacity-0">
                 {project.client}

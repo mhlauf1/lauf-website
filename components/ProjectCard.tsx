@@ -5,6 +5,7 @@ import Image from "next/image";
 import { gsap } from "@/lib/gsap";
 import type { Project } from "@/data/projects";
 import MinnesotaManufacturing from "./MinnesotaManufacturing";
+import TransitionLink from "./TransitionLink";
 
 export default function ProjectCard({
   project,
@@ -13,7 +14,7 @@ export default function ProjectCard({
   project: Project;
   index?: number;
 }) {
-  const cardRef = useRef<HTMLAnchorElement>(null);
+  const cardRef = useRef<HTMLAnchorElement | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -77,11 +78,9 @@ export default function ProjectCard({
   const bgImage = project.videoBg || project.thumbnail;
 
   return (
-    <a
+    <TransitionLink
       ref={cardRef}
-      href={project.url || "#"}
-      target="_blank"
-      rel="noopener noreferrer"
+      href={`/work/${project.slug}`}
       className="group block cursor-pointer"
       style={{ opacity: 0, transform: "translateY(30px)" }}
     >
@@ -141,9 +140,9 @@ export default function ProjectCard({
           fill="none"
           stroke="currentColor"
           strokeWidth="1.5"
-          className="mt-1 shrink-0 text-foreground-secondary transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground"
+          className="mt-1 shrink-0 text-foreground-secondary transition-transform duration-300 group-hover:translate-x-1 group-hover:text-foreground"
         >
-          <path d="M7 17L17 7M17 7H7M17 7v10" />
+          <path d="M5 12h14M13 6l6 6-6 6" />
         </svg>
       </div>
 
@@ -157,6 +156,6 @@ export default function ProjectCard({
           </span>
         ))}
       </div>
-    </a>
+    </TransitionLink>
   );
 }

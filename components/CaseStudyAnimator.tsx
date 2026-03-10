@@ -55,17 +55,18 @@ export default function CaseStudyAnimator({
       });
 
       const gridImages = container.querySelectorAll(".cs-grid-image");
-      gsap.to(gridImages, {
-        y: 0,
-        opacity: 1,
-        duration: 0.6,
-        ease: "expo.out",
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: gridImages[0],
-          start: "top 85%",
-          toggleActions: "play none none none",
-        },
+      gridImages.forEach((img) => {
+        gsap.to(img, {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          ease: "expo.out",
+          scrollTrigger: {
+            trigger: img,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        });
       });
     }, container);
 
