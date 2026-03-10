@@ -86,7 +86,7 @@ export const projects: Project[] = [
     url: "https://playbookexp.com",
     video: "/videos/playbook-video.mp4",
     videoBg: "/images/projects/playbook-mockup-1.jpg",
-    order: 1,
+    order: 2,
     sections: [
       {
         type: "text",
@@ -251,7 +251,7 @@ export const projects: Project[] = [
     gradient:
       "linear-gradient(135deg, #0a1628 0%, #132744 35%, #1c3d6e 65%, #e8edf4 100%)",
     url: "https://stocadvisory.com",
-    order: 2,
+    order: 1,
     sections: [
       {
         type: "text",
