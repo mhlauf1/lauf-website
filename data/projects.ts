@@ -856,183 +856,183 @@ export const projects: Project[] = [
       },
     ],
   },
-  {
-    slug: "hound-around-resort",
-    title: "Where Every Dog Feels at Home",
-    client: "Hound Around Resort",
-    year: "2024",
-    scope: ["Brand Identity", "Web Design", "Development"],
-    thumbnail: "/images/projects/hound-thumb.png",
-    heroImage: "/images/projects/hound-hero.jpg",
-    overview:
-      "Hound Around Resort is a premium dog boarding and daycare facility. We crafted a warm, inviting brand and website that communicates the care and attention that sets their resort apart from standard kennels.",
-    challenge:
-      "Pet parents choosing overnight boarding need deep reassurance. Hound Around's previous web presence didn't reflect the quality of care they provide, making it difficult to justify their premium positioning against lower-cost competitors.",
-    approach:
-      "We built a brand identity around warm cream tones and forest green — evoking the natural, open-air feel of the resort itself. The website emphasizes transparency, showcasing facilities, daily routines, and staff credentials. Every design decision was made to reduce the anxiety pet parents feel when leaving their dog somewhere new.",
-    results: [
-      "Brand and website launch supporting premium market position",
-      "Facility-forward content building trust before first visit",
-      "Online inquiry volume increasing steadily post-launch",
-    ],
-    images: [
-      "/images/projects/hound-01.jpg",
-      "/images/projects/hound-02.jpg",
-      "/images/projects/hound-03.jpg",
-    ],
-    gradient:
-      "linear-gradient(135deg, #f5f0e3 0%, #e0d5c0 30%, #2d5a3d 65%, #1a3d28 100%)",
-    url: "https://hound-3-frontend.vercel.app",
-    order: 6,
-  },
-  {
-    slug: "body-biz",
-    title: "Fitness with a Natural Edge",
-    client: "Body Biz",
-    year: "2024",
-    scope: ["Web Design", "Webflow Development", "Stripe", "Ecommerce", "Custom Dashboard", "Systems"],
-    thumbnail: "/images/projects/body-biz-2.png",
-    heroImage: "/images/projects/body-hero.jpg",
-    overview:
-      "The Body Biz is a personal training studio in Columbus, Ohio. The entire operation was running on Google Sheets and Authorize.net. We designed a distinctive brand, built a Webflow site, and solved a complex payment and commission tracking problem through three iterations — ending with a custom dashboard and Stripe.",
-    challenge:
-      "Tracking sessions, managing subscriptions, splitting commissions, handling refunds, processing payments for custom programs that varied by client — all of it was manual. They needed a website refresh, but more than that, they needed a system that could actually run their business.",
-    approach:
-      "We went a completely different direction from the aggressive, high-contrast fitness branding. The Body Biz brand is built around natural imagery, earth tones, and plant-forward design elements. For the business side, we iterated through three payment solutions until we built exactly what they needed from scratch.",
-    results: [
-      "Designed a brand identity that breaks from typical aggressive fitness industry aesthetics",
-      "Built a Webflow site with direct coach-to-client purchasing",
-      "Solved a complex payment and commission tracking problem through three iterations",
-      "Replaced Google Sheets and Authorize.net with a custom-built dashboard and Stripe",
-      "Ongoing partnership: the system continues to evolve as the business grows",
-    ],
-    images: [
-      "/images/projects/body-01.jpg",
-      "/images/projects/body-02.jpg",
-      "/images/projects/body-03.jpg",
-    ],
-    gradient:
-      "linear-gradient(135deg, #0a2a3a 0%, #1a4a5a 30%, #2a7a6a 60%, #4aaa8a 100%)",
-    url: "https://thebody.biz",
-    order: 7,
-    sections: [
-      {
-        type: "text",
-        label: "The Situation",
-        paragraphs: [
-          "The Body Biz is a personal training studio in Columbus, Ohio founded by Kate Couden. Kate runs her own clients and has several trainers working under her, each with their own client base and a commission split on every session. When they came to us, the entire operation was running on Google Sheets and Authorize.net. Tracking sessions, managing subscriptions, splitting commissions, handling refunds, processing payments for custom programs that varied by client, all of it was manual. They needed a website refresh, but more than that, they needed a system that could actually run their business.",
-        ],
-      },
-      {
-        type: "rich",
-        label: "What We Built",
-        subsections: [
-          {
-            heading: "Brand & Design",
-            paragraphs: [
-              "The fitness industry is saturated with aggressive, high-contrast branding. Dark backgrounds, neon accents, intense photography. We went a completely different direction. The Body Biz brand is built around natural imagery, earth tones, and plant-forward design elements. Rubber plant leaves, organic textures, and a warm color palette that feels more like a wellness studio than a gym.",
-              "This wasn't just an aesthetic choice. Kate's approach to fitness is rooted in sustainable, long-term health rather than quick results and intensity. The brand needed to reflect that philosophy. The visual system carries through every touchpoint: the website, coach profiles, program cards, and the checkout experience.",
-            ],
-            image: {
-              src: "/images/projects/body-brand.jpg",
-              alt: "Body Biz homepage hero with plant imagery and brand system",
-              aspectRatio: "16/9",
-            },
-          },
-          {
-            heading: "The Website",
-            paragraphs: [
-              "Built on Webflow, the site serves as both a marketing tool and a direct sales channel. Each coach has a dedicated profile with their bio, specialties, and available programs. Clients can browse coaches, explore programs, and purchase directly on the site.",
-              "The coach profiles are designed to feel personal and approachable. This isn't a faceless gym membership. You're choosing a specific person to work with, and the site reflects that with individual photography, bios, and program breakdowns for each trainer.",
-            ],
-            image: {
-              src: "/images/projects/body-website.jpg",
-              alt: "Coach profile page showing individual photography and program breakdowns",
-              aspectRatio: "16/9",
-            },
-          },
-          {
-            heading: "The Payment Problem (and Three Solutions)",
-            paragraphs: [
-              "This is where the project gets interesting. The Body Biz doesn't sell one-size-fits-all memberships. Every client gets a custom program: maybe 3 months at a certain number of sessions for $660, or 1 month for $500, or something else entirely. Clients switch trainers, need cancellations, request refunds, change programs mid-cycle. And underneath all of that, there's a commission split: when a client works with a trainer like Lexie, she gets 70% and Kate gets 30%. When Kate trains directly, she keeps 100%. Payroll was a mess.",
-              "Version 1 was Foxy.io, a platform that let the team build custom checkout links with variable pricing, durations, and subscription terms. Trainers could generate a link for any program configuration and send it directly to the client. Version 2 added Zapier automation to route every Foxy.io purchase into a formatted Google Sheet, already divided out for commission tracking. It was a decent system but prone to errors, and Foxy.io started showing limitations with recharging existing clients, processing refunds, and other edge cases.",
-              "Version 3 is the real solution. We stepped back and built exactly what they needed from scratch: a custom Next.js dashboard that handles everything. Creating client programs with custom pricing, managing subscriptions, processing payments through Stripe (replacing Authorize.net entirely), tracking commissions per trainer, handling refunds and cancellations, and giving Kate a clear view of the entire business. No more Google Sheets. No more Zapier workarounds. No more Foxy.io limitations.",
-            ],
-            image: {
-              src: "/images/projects/body-dashboard.jpg",
-              alt: "Custom dashboard and Stripe payment integration",
-              aspectRatio: "16/9",
-            },
-          },
-        ],
-      },
-      {
-        type: "gallery",
-        label: "Gallery",
-        images: [
-          {
-            src: "/images/projects/body-gallery-01.jpg",
-            alt: "Body Biz homepage — full-width desktop",
-            aspectRatio: "16/9",
-            layout: "full",
-          },
-          {
-            src: "/images/projects/body-gallery-02.jpg",
-            alt: "Mobile responsive views",
-            aspectRatio: "3/4",
-            layout: "half",
-          },
-          {
-            src: "/images/projects/body-gallery-03.jpg",
-            alt: "Coach profile page",
-            aspectRatio: "3/4",
-            layout: "half",
-          },
-          {
-            src: "/images/projects/body-gallery-04.jpg",
-            alt: "Program detail and purchase page",
-            aspectRatio: "4/3",
-            layout: "half",
-          },
-          {
-            src: "/images/projects/body-gallery-05.jpg",
-            alt: "Testimonials section",
-            aspectRatio: "4/3",
-            layout: "half",
-          },
-          {
-            src: "/images/projects/body-gallery-06.jpg",
-            alt: "Brand detail — plant imagery, leaf logo, and color palette",
-            aspectRatio: "16/9",
-            layout: "full",
-          },
-          {
-            src: "/images/projects/body-gallery-07.jpg",
-            alt: "Custom dashboard screenshots",
-            aspectRatio: "4/3",
-            layout: "half",
-          },
-          {
-            src: "/images/projects/body-gallery-08.jpg",
-            alt: "Natural design elements in context",
-            aspectRatio: "4/3",
-            layout: "half",
-          },
-        ],
-      },
-      {
-        type: "results",
-        label: "The Outcome",
-        items: [
-          "Designed a brand identity that breaks from typical aggressive fitness industry aesthetics",
-          "Built a Webflow site with direct coach-to-client purchasing",
-          "Solved a complex payment and commission tracking problem through three iterations",
-          "Replaced Google Sheets and Authorize.net with a custom-built dashboard and Stripe",
-          "Ongoing partnership: the system continues to evolve as the business grows",
-        ],
-      },
-    ],
-  },
+  // {
+  //   slug: "hound-around-resort",
+  //   title: "Where Every Dog Feels at Home",
+  //   client: "Hound Around Resort",
+  //   year: "2024",
+  //   scope: ["Brand Identity", "Web Design", "Development"],
+  //   thumbnail: "/images/projects/hound-thumb.png",
+  //   heroImage: "/images/projects/hound-hero.jpg",
+  //   overview:
+  //     "Hound Around Resort is a premium dog boarding and daycare facility. We crafted a warm, inviting brand and website that communicates the care and attention that sets their resort apart from standard kennels.",
+  //   challenge:
+  //     "Pet parents choosing overnight boarding need deep reassurance. Hound Around's previous web presence didn't reflect the quality of care they provide, making it difficult to justify their premium positioning against lower-cost competitors.",
+  //   approach:
+  //     "We built a brand identity around warm cream tones and forest green — evoking the natural, open-air feel of the resort itself. The website emphasizes transparency, showcasing facilities, daily routines, and staff credentials. Every design decision was made to reduce the anxiety pet parents feel when leaving their dog somewhere new.",
+  //   results: [
+  //     "Brand and website launch supporting premium market position",
+  //     "Facility-forward content building trust before first visit",
+  //     "Online inquiry volume increasing steadily post-launch",
+  //   ],
+  //   images: [
+  //     "/images/projects/hound-01.jpg",
+  //     "/images/projects/hound-02.jpg",
+  //     "/images/projects/hound-03.jpg",
+  //   ],
+  //   gradient:
+  //     "linear-gradient(135deg, #f5f0e3 0%, #e0d5c0 30%, #2d5a3d 65%, #1a3d28 100%)",
+  //   url: "https://hound-3-frontend.vercel.app",
+  //   order: 6,
+  // },
+  // {
+  //   slug: "body-biz",
+  //   title: "Fitness with a Natural Edge",
+  //   client: "Body Biz",
+  //   year: "2024",
+  //   scope: ["Web Design", "Webflow Development", "Stripe", "Ecommerce", "Custom Dashboard", "Systems"],
+  //   thumbnail: "/images/projects/body-biz-2.png",
+  //   heroImage: "/images/projects/body-hero.jpg",
+  //   overview:
+  //     "The Body Biz is a personal training studio in Columbus, Ohio. The entire operation was running on Google Sheets and Authorize.net. We designed a distinctive brand, built a Webflow site, and solved a complex payment and commission tracking problem through three iterations — ending with a custom dashboard and Stripe.",
+  //   challenge:
+  //     "Tracking sessions, managing subscriptions, splitting commissions, handling refunds, processing payments for custom programs that varied by client — all of it was manual. They needed a website refresh, but more than that, they needed a system that could actually run their business.",
+  //   approach:
+  //     "We went a completely different direction from the aggressive, high-contrast fitness branding. The Body Biz brand is built around natural imagery, earth tones, and plant-forward design elements. For the business side, we iterated through three payment solutions until we built exactly what they needed from scratch.",
+  //   results: [
+  //     "Designed a brand identity that breaks from typical aggressive fitness industry aesthetics",
+  //     "Built a Webflow site with direct coach-to-client purchasing",
+  //     "Solved a complex payment and commission tracking problem through three iterations",
+  //     "Replaced Google Sheets and Authorize.net with a custom-built dashboard and Stripe",
+  //     "Ongoing partnership: the system continues to evolve as the business grows",
+  //   ],
+  //   images: [
+  //     "/images/projects/body-01.jpg",
+  //     "/images/projects/body-02.jpg",
+  //     "/images/projects/body-03.jpg",
+  //   ],
+  //   gradient:
+  //     "linear-gradient(135deg, #0a2a3a 0%, #1a4a5a 30%, #2a7a6a 60%, #4aaa8a 100%)",
+  //   url: "https://thebody.biz",
+  //   order: 7,
+  //   sections: [
+  //     {
+  //       type: "text",
+  //       label: "The Situation",
+  //       paragraphs: [
+  //         "The Body Biz is a personal training studio in Columbus, Ohio founded by Kate Couden. Kate runs her own clients and has several trainers working under her, each with their own client base and a commission split on every session. When they came to us, the entire operation was running on Google Sheets and Authorize.net. Tracking sessions, managing subscriptions, splitting commissions, handling refunds, processing payments for custom programs that varied by client, all of it was manual. They needed a website refresh, but more than that, they needed a system that could actually run their business.",
+  //       ],
+  //     },
+  //     {
+  //       type: "rich",
+  //       label: "What We Built",
+  //       subsections: [
+  //         {
+  //           heading: "Brand & Design",
+  //           paragraphs: [
+  //             "The fitness industry is saturated with aggressive, high-contrast branding. Dark backgrounds, neon accents, intense photography. We went a completely different direction. The Body Biz brand is built around natural imagery, earth tones, and plant-forward design elements. Rubber plant leaves, organic textures, and a warm color palette that feels more like a wellness studio than a gym.",
+  //             "This wasn't just an aesthetic choice. Kate's approach to fitness is rooted in sustainable, long-term health rather than quick results and intensity. The brand needed to reflect that philosophy. The visual system carries through every touchpoint: the website, coach profiles, program cards, and the checkout experience.",
+  //           ],
+  //           image: {
+  //             src: "/images/projects/body-brand.jpg",
+  //             alt: "Body Biz homepage hero with plant imagery and brand system",
+  //             aspectRatio: "16/9",
+  //           },
+  //         },
+  //         {
+  //           heading: "The Website",
+  //           paragraphs: [
+  //             "Built on Webflow, the site serves as both a marketing tool and a direct sales channel. Each coach has a dedicated profile with their bio, specialties, and available programs. Clients can browse coaches, explore programs, and purchase directly on the site.",
+  //             "The coach profiles are designed to feel personal and approachable. This isn't a faceless gym membership. You're choosing a specific person to work with, and the site reflects that with individual photography, bios, and program breakdowns for each trainer.",
+  //           ],
+  //           image: {
+  //             src: "/images/projects/body-website.jpg",
+  //             alt: "Coach profile page showing individual photography and program breakdowns",
+  //             aspectRatio: "16/9",
+  //           },
+  //         },
+  //         {
+  //           heading: "The Payment Problem (and Three Solutions)",
+  //           paragraphs: [
+  //             "This is where the project gets interesting. The Body Biz doesn't sell one-size-fits-all memberships. Every client gets a custom program: maybe 3 months at a certain number of sessions for $660, or 1 month for $500, or something else entirely. Clients switch trainers, need cancellations, request refunds, change programs mid-cycle. And underneath all of that, there's a commission split: when a client works with a trainer like Lexie, she gets 70% and Kate gets 30%. When Kate trains directly, she keeps 100%. Payroll was a mess.",
+  //             "Version 1 was Foxy.io, a platform that let the team build custom checkout links with variable pricing, durations, and subscription terms. Trainers could generate a link for any program configuration and send it directly to the client. Version 2 added Zapier automation to route every Foxy.io purchase into a formatted Google Sheet, already divided out for commission tracking. It was a decent system but prone to errors, and Foxy.io started showing limitations with recharging existing clients, processing refunds, and other edge cases.",
+  //             "Version 3 is the real solution. We stepped back and built exactly what they needed from scratch: a custom Next.js dashboard that handles everything. Creating client programs with custom pricing, managing subscriptions, processing payments through Stripe (replacing Authorize.net entirely), tracking commissions per trainer, handling refunds and cancellations, and giving Kate a clear view of the entire business. No more Google Sheets. No more Zapier workarounds. No more Foxy.io limitations.",
+  //           ],
+  //           image: {
+  //             src: "/images/projects/body-dashboard.jpg",
+  //             alt: "Custom dashboard and Stripe payment integration",
+  //             aspectRatio: "16/9",
+  //           },
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       type: "gallery",
+  //       label: "Gallery",
+  //       images: [
+  //         {
+  //           src: "/images/projects/body-gallery-01.jpg",
+  //           alt: "Body Biz homepage — full-width desktop",
+  //           aspectRatio: "16/9",
+  //           layout: "full",
+  //         },
+  //         {
+  //           src: "/images/projects/body-gallery-02.jpg",
+  //           alt: "Mobile responsive views",
+  //           aspectRatio: "3/4",
+  //           layout: "half",
+  //         },
+  //         {
+  //           src: "/images/projects/body-gallery-03.jpg",
+  //           alt: "Coach profile page",
+  //           aspectRatio: "3/4",
+  //           layout: "half",
+  //         },
+  //         {
+  //           src: "/images/projects/body-gallery-04.jpg",
+  //           alt: "Program detail and purchase page",
+  //           aspectRatio: "4/3",
+  //           layout: "half",
+  //         },
+  //         {
+  //           src: "/images/projects/body-gallery-05.jpg",
+  //           alt: "Testimonials section",
+  //           aspectRatio: "4/3",
+  //           layout: "half",
+  //         },
+  //         {
+  //           src: "/images/projects/body-gallery-06.jpg",
+  //           alt: "Brand detail — plant imagery, leaf logo, and color palette",
+  //           aspectRatio: "16/9",
+  //           layout: "full",
+  //         },
+  //         {
+  //           src: "/images/projects/body-gallery-07.jpg",
+  //           alt: "Custom dashboard screenshots",
+  //           aspectRatio: "4/3",
+  //           layout: "half",
+  //         },
+  //         {
+  //           src: "/images/projects/body-gallery-08.jpg",
+  //           alt: "Natural design elements in context",
+  //           aspectRatio: "4/3",
+  //           layout: "half",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       type: "results",
+  //       label: "The Outcome",
+  //       items: [
+  //         "Designed a brand identity that breaks from typical aggressive fitness industry aesthetics",
+  //         "Built a Webflow site with direct coach-to-client purchasing",
+  //         "Solved a complex payment and commission tracking problem through three iterations",
+  //         "Replaced Google Sheets and Authorize.net with a custom-built dashboard and Stripe",
+  //         "Ongoing partnership: the system continues to evolve as the business grows",
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     slug: "mn-manufacturing-recruiting",
     title: "Connecting Talent to the Shop Floor",
