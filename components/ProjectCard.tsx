@@ -5,7 +5,7 @@ import Image from "next/image";
 import { gsap } from "@/lib/gsap";
 import type { Project } from "@/data/projects";
 import MinnesotaManufacturing from "./MinnesotaManufacturing";
-import TransitionLink from "./TransitionLink";
+// import TransitionLink from "./TransitionLink";
 
 export default function ProjectCard({
   project,
@@ -78,9 +78,12 @@ export default function ProjectCard({
   const bgImage = project.videoBg || project.thumbnail;
 
   return (
-    <TransitionLink
+    // Link to external site instead of internal case study page
+    <a
       ref={cardRef}
-      href={`/work/${project.slug}`}
+      href={project.url || `/work/${project.slug}`}
+      target="_blank"
+      rel="noopener noreferrer"
       className="group block cursor-pointer"
       style={{ opacity: 0, transform: "translateY(30px)" }}
     >
@@ -156,6 +159,6 @@ export default function ProjectCard({
           </span>
         ))}
       </div>
-    </TransitionLink>
+    </a>
   );
 }

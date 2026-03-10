@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import TransitionLink from "./TransitionLink";
+// import TransitionLink from "./TransitionLink";
 import { gsap } from "@/lib/gsap";
 import { useTransitionReady } from "./PageTransitionProvider";
 import { getSortedProjects } from "@/data/projects";
@@ -128,10 +128,13 @@ export default function HeroProjects() {
         className="absolute inset-x-0 bottom-4 md:bottom-16 overflow-hidden opacity-0 lg:hidden"
       >
         <div ref={trackRef} className="flex w-max" style={{ gap: GAP }}>
+          {/* Link to external site instead of internal case study page */}
           {marqueeItems.map((project, i) => (
-            <TransitionLink
+            <a
               key={`${project.slug}-${i}`}
-              href={`/work/${project.slug}`}
+              href={project.url || `/work/${project.slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label={`View ${project.client} project`}
               className="marquee-card relative block flex-shrink-0 overflow-hidden rounded-md shadow-lg"
               style={{ width: "69vw", aspectRatio: "9 / 5" }}
@@ -146,7 +149,7 @@ export default function HeroProjects() {
               <span className="absolute inset-x-0 bottom-0 flex items-end bg-gradient-to-t from-black/60 to-transparent px-3 pb-2.5 pt-8 font-mono text-[10px] tracking-wider text-white/90 uppercase">
                 {project.client}
               </span>
-            </TransitionLink>
+            </a>
           ))}
         </div>
       </div>
@@ -160,10 +163,13 @@ export default function HeroProjects() {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
+          {/* Link to external site instead of internal case study page */}
           {projects.map((project, i) => (
-            <TransitionLink
+            <a
               key={project.slug}
-              href={`/work/${project.slug}`}
+              href={project.url || `/work/${project.slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label={`View ${project.client} project`}
               className="hero-thumb absolute overflow-hidden rounded-md shadow-xl transition-shadow hover:shadow-2xl"
               style={{
@@ -186,7 +192,7 @@ export default function HeroProjects() {
               <span className="card-label pointer-events-none absolute inset-x-0 bottom-0 flex items-end bg-gradient-to-t from-black/70 to-transparent px-3 pb-2 pt-8 font-mono text-[10px] tracking-wider text-white uppercase opacity-0">
                 {project.client}
               </span>
-            </TransitionLink>
+            </a>
           ))}
         </div>
       </div>
